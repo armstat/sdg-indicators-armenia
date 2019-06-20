@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CString.prototype.includes"></script>
+
+        <script>
+// This is where we initialise any global variables, namespaced in "opensdg".
+var opensdg = {
+
+  // A base URL for asynchronous calls to SDG data.
+  remoteDataBaseUrl: 'https://armstat.github.io/sdg-data-armenia/staging',
+
+  // A hook which can be replaced to modify the configuration for Chart.js.
+  // To see where this is used, see indicatorView.js createPlot() and updatePlot().
+  // To see an example of replacing it, see binary.html.
+  chartConfigAlter: function(config) {
+    // Alterations go here.
+    return config;
+  },
+};
+
+// For backwards compatibility, some of these might need to be global.
+// @TODO: Remove these eventually.
+var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
+
+</script>
+
         <script>
 // JavaScript container for translation data.
 var translations = {
@@ -13,12 +38,12 @@ var translations = {
 
     // The majority of uses of this function are to translate disaggregation
     // data. To spare data providers of needing to enter "data." in front of
-    // their disaggregation data, we do it for them here.
-    var originalKey = key;
-    if (!key.includes('.') && this.data) {
-      key = 'data.' + key.toLowerCase();
+    // their disaggregation data, we specifically look for that here.
+    if (typeof this.data === 'object' && this.data[key]) {
+      return this.data[key];
     }
 
+    var originalKey = key;
     var drilled = this;
     var levelsDrilled = 0;
     var levels = key.split('.');
@@ -46,7 +71,6 @@ var translations = {
 };
 </script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -82,10 +106,10 @@ var translations = {
         
 
         
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-site-armenia/assets/css/default.css?v=20190620000055">
+        <link rel="stylesheet" href="/sdg-site-armenia/assets/css/default.css?v=20190620205351">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -93,7 +117,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-site-armenia/assets/css/custom.css?v=20190620000055"></head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-site-armenia/assets/css/custom.css?v=20190620205351"></head>
 <body class="language-en">
 <!-- <div class="container"> -->
 
@@ -123,7 +147,7 @@ var translations = {
   <i class="language-toggle fa fa-chevron-down"></i>
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
-<ul class="language-options language-toggle"><li><a href="/sdg-site-armenia/am/1/">ՀԱՅԵՐԵՆ</a></li><li><a href="/sdg-site-armenia/ru/1/">русский</a></li></ul>
+<ul class="language-options language-toggle"><li><a href="/sdg-site-armenia/am/1/">ՀԱՅԵՐԵՆ</a></li><li><a href="/sdg-site-armenia/ru/1/">Pусский</a></li></ul>
 
     </div></div>
 
@@ -149,7 +173,7 @@ var translations = {
   <i class="language-toggle fa fa-chevron-down"></i>
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
-<ul class="language-options language-toggle"><li><a href="/sdg-site-armenia/am/1/">ՀԱՅԵՐԵՆ</a></li><li><a href="/sdg-site-armenia/ru/1/">русский</a></li></ul>
+<ul class="language-options language-toggle"><li><a href="/sdg-site-armenia/am/1/">ՀԱՅԵՐԵՆ</a></li><li><a href="/sdg-site-armenia/ru/1/">Pусский</a></li></ul>
 
         </li></ul>
 
@@ -217,6 +241,10 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -227,7 +255,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-1-1">
           <span>
             1.1.1
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -249,6 +277,10 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -259,7 +291,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-2-1">
           <span>
             1.2.1
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -268,6 +300,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -278,7 +314,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-2-2">
           <span>
             1.2.2
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -300,6 +336,10 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -310,7 +350,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1">
           <span>
             1.3.1
-            <span class="status danger">
+            <span class="status notstarted">
               Exploring data sources
             </span>
           </span>
@@ -319,6 +359,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -329,7 +373,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-a">
           <span>
             1.3.1.a
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -345,6 +389,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -355,7 +403,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-b">
           <span>
             1.3.1.b
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -371,6 +419,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -381,7 +433,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-c">
           <span>
             1.3.1.c
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -397,6 +449,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -407,7 +463,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-d">
           <span>
             1.3.1.d
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -423,6 +479,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -433,7 +493,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-e">
           <span>
             1.3.1.e
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -449,6 +509,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -459,7 +523,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-f">
           <span>
             1.3.1.f
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -475,6 +539,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -485,7 +553,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-g">
           <span>
             1.3.1.g
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -501,6 +569,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -511,7 +583,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-h">
           <span>
             1.3.1.h
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -527,6 +599,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -537,7 +613,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-i">
           <span>
             1.3.1.i
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -553,6 +629,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -563,7 +643,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-j">
           <span>
             1.3.1.j
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -579,6 +659,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -589,7 +673,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-ja">
           <span>
             1.3.1.ja
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -605,6 +689,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -615,7 +703,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-jb">
           <span>
             1.3.1.jb
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -631,6 +719,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -641,7 +733,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-3-1-jc">
           <span>
             1.3.1.jc
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -670,6 +762,10 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -680,7 +776,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-4-1">
           <span>
             1.4.1
-            <span class="status danger">
+            <span class="status notstarted">
               Exploring data sources
             </span>
           </span>
@@ -689,6 +785,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -699,7 +799,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-4-1-a">
           <span>
             1.4.1.a
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -715,6 +815,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -725,7 +829,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-4-1-b">
           <span>
             1.4.1.b
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -741,6 +845,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -751,11 +859,11 @@ var translations = {
         <a href="/sdg-site-armenia/1-4-2">
           <span>
             1.4.2
-            <span class="status danger">
+            <span class="status notstarted">
               Exploring data sources
             </span>
           </span>
-          Proportion of total adult population with secure tenure rights to land, (a) with legally recognized documentation, and (b) who perceive their rights to land as secure, by sex and type of tenure
+          Proportion of total adult population with secure tenure rights to land, with legally recognized documentation, and who perceive their rights to land as secure, by sex and by type of tenure
           
         </a>
       </div>
@@ -773,6 +881,10 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -783,7 +895,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-5-1">
           <span>
             1.5.1
-            <span class="status danger">
+            <span class="status notstarted">
               Exploring data sources
             </span>
           </span>
@@ -792,6 +904,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -802,7 +918,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-5-1-a">
           <span>
             1.5.1.a
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -818,6 +934,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -828,7 +948,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-5-2">
           <span>
             1.5.2
-            <span class="status danger">
+            <span class="status notstarted">
               Exploring data sources
             </span>
           </span>
@@ -837,6 +957,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -847,7 +971,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-5-3">
           <span>
             1.5.3
-            <span class="status danger">
+            <span class="status notstarted">
               Exploring data sources
             </span>
           </span>
@@ -856,6 +980,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -866,7 +994,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-5-4">
           <span>
             1.5.4
-            <span class="status danger">
+            <span class="status notstarted">
               Exploring data sources
             </span>
           </span>
@@ -888,6 +1016,10 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -898,7 +1030,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-a-1">
           <span>
             1.a.1
-            <span class="status danger">
+            <span class="status notstarted">
               Exploring data sources
             </span>
           </span>
@@ -907,6 +1039,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -917,7 +1053,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-a-2">
           <span>
             1.a.2
-            <span class="status success">
+            <span class="status complete">
               Reported online
             </span>
           </span>
@@ -926,6 +1062,10 @@ var translations = {
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -936,7 +1076,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-a-3">
           <span>
             1.a.3
-            <span class="status danger">
+            <span class="status notstarted">
               Exploring data sources
             </span>
           </span>
@@ -958,6 +1098,10 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -968,7 +1112,7 @@ var translations = {
         <a href="/sdg-site-armenia/1-b-1">
           <span>
             1.b.1
-            <span class="status danger">
+            <span class="status notstarted">
               Exploring data sources
             </span>
           </span>
@@ -984,12 +1128,16 @@ var translations = {
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-9">
-        <a href="mailto:test@example.com">Contact us</a>
-        
-      </div>
-      <div class="col-xs-3 text-right">
-        <a href="/sdg-site-armenia/faq/">FAQ</a> | <a href="/sdg-site-armenia/about/cookies-and-privacy/">Cookies</a>
+      <div class="col-xs-12">
+        <div id="footerLinks">
+          <ul>
+            <li><a href="mailto:test@example.com">Contact us</a></li>
+            
+            
+            <li><a href="/sdg-site-armenia/faq/">FAQ</a></li>
+            <li><a href="/sdg-site-armenia/about/cookies-and-privacy/">Cookies</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -1002,7 +1150,7 @@ var translations = {
 <!-- /.container </div> -->
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
@@ -1017,10 +1165,8 @@ var translations = {
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
-<script>
-  var remoteDataBaseUrl = 'https://armstat.github.io/sdg-data-armenia/staging';
-</script>
-<script src='/sdg-site-armenia/assets/js/sdg.js?v=20190620000055'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
+<script src='/sdg-site-armenia/assets/js/sdg.js?v=20190620205351'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
@@ -1031,7 +1177,7 @@ $(function() {
       });
 
       $.ajax({
-        url: 'https://armstat.github.io/sdg-data-armenia/staging/comb/' + domData.id + '.json',
+        url: opensdg.remoteDataBaseUrl + '/comb/' + domData.id + '.json',
         success: function(res) {
 
           $('.async-loading').remove();
@@ -1051,7 +1197,8 @@ $(function() {
             geographicalArea: domData.geographicalarea,
             showData: domData.showdata,
             footnote: domData.footnote,
-            graphType: domData.graphtype
+            graphType: domData.graphtype,
+            startValues: domData.startvalues
           }),
           view  = new indicatorView(model, {
             rootElement: '#indicatorData',

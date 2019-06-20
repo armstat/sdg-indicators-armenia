@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CString.prototype.includes"></script>
+
+        <script>
+// This is where we initialise any global variables, namespaced in "opensdg".
+var opensdg = {
+
+  // A base URL for asynchronous calls to SDG data.
+  remoteDataBaseUrl: 'https://armstat.github.io/sdg-data-armenia/staging',
+
+  // A hook which can be replaced to modify the configuration for Chart.js.
+  // To see where this is used, see indicatorView.js createPlot() and updatePlot().
+  // To see an example of replacing it, see binary.html.
+  chartConfigAlter: function(config) {
+    // Alterations go here.
+    return config;
+  },
+};
+
+// For backwards compatibility, some of these might need to be global.
+// @TODO: Remove these eventually.
+var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
+
+</script>
+
         <script>
 // JavaScript container for translation data.
 var translations = {
@@ -13,12 +38,12 @@ var translations = {
 
     // The majority of uses of this function are to translate disaggregation
     // data. To spare data providers of needing to enter "data." in front of
-    // their disaggregation data, we do it for them here.
-    var originalKey = key;
-    if (!key.includes('.') && this.data) {
-      key = 'data.' + key.toLowerCase();
+    // their disaggregation data, we specifically look for that here.
+    if (typeof this.data === 'object' && this.data[key]) {
+      return this.data[key];
     }
 
+    var originalKey = key;
     var drilled = this;
     var levelsDrilled = 0;
     var levels = key.split('.');
@@ -46,7 +71,6 @@ var translations = {
 };
 </script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -82,10 +106,10 @@ var translations = {
         
 
         
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-site-armenia/assets/css/default.css?v=20190620000055">
+        <link rel="stylesheet" href="/sdg-site-armenia/assets/css/default.css?v=20190620205351">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -93,7 +117,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-site-armenia/assets/css/custom.css?v=20190620000055"></head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-site-armenia/assets/css/custom.css?v=20190620205351"></head>
 <body class="language-ru">
 <!-- <div class="container"> -->
 
@@ -119,7 +143,7 @@ var translations = {
     <ul id='accessibility-nav' class='contrast-switcher'></ul><div class="language-toggle-mobile">
       <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
   <i class="fa fa-globe"></i>
-  <span class="language-toggle-text">русский</span>
+  <span class="language-toggle-text">Pусский</span>
   <i class="language-toggle fa fa-chevron-down"></i>
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
@@ -145,7 +169,7 @@ var translations = {
           </li><li>
           <a class="language-toggle-button" onclick="$(this).next('.language-toggle').toggle(); return false;">
   <i class="fa fa-globe"></i>
-  <span class="language-toggle-text">русский</span>
+  <span class="language-toggle-text">Pусский</span>
   <i class="language-toggle fa fa-chevron-down"></i>
   <i class="language-toggle fa fa-chevron-up" style="display:none;"></i>
 </a>
@@ -222,6 +246,10 @@ var translations = {
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -232,7 +260,7 @@ var translations = {
         <a href="/sdg-site-armenia/ru/4-1-1">
           <span>
             4.1.1
-            <span class="status danger">
+            <span class="status notstarted">
               Исследование источников данных
             </span>
           </span>
@@ -245,6 +273,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -255,7 +287,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-1-1b">
           <span>
             4.1.1b
-            <span class="status success">
+            <span class="status complete">
               Сообщалось в интернете
             </span>
           </span>
@@ -271,6 +303,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -281,7 +317,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-1-1c">
           <span>
             4.1.1c
-            <span class="status success">
+            <span class="status complete">
               Сообщалось в интернете
             </span>
           </span>
@@ -315,6 +351,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -325,7 +365,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-2-1">
           <span>
             4.2.1
-            <span class="status danger">
+            <span class="status notstarted">
               Исследование источников данных
             </span>
           </span>
@@ -337,6 +377,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -347,7 +391,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-2-2">
           <span>
             4.2.2
-            <span class="status danger">
+            <span class="status notstarted">
               Исследование источников данных
             </span>
           </span>
@@ -358,6 +402,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -368,7 +416,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-2-2-a">
           <span>
             4.2.2.a
-            <span class="status success">
+            <span class="status complete">
               Сообщалось в интернете
             </span>
           </span>
@@ -400,6 +448,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -410,7 +462,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-3-1">
           <span>
             4.3.1
-            <span class="status danger">
+            <span class="status notstarted">
               Исследование источников данных
             </span>
           </span>
@@ -422,6 +474,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -432,7 +488,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-3-1-a">
           <span>
             4.3.1.a
-            <span class="status success">
+            <span class="status complete">
               Сообщалось в интернете
             </span>
           </span>
@@ -466,6 +522,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -476,7 +536,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-4-1">
           <span>
             4.4.1
-            <span class="status danger">
+            <span class="status notstarted">
               Исследование источников данных
             </span>
           </span>
@@ -488,6 +548,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -498,7 +562,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-4-1-a">
           <span>
             4.4.1.a
-            <span class="status success">
+            <span class="status complete">
               Сообщалось в интернете
             </span>
           </span>
@@ -533,6 +597,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -543,7 +611,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-5-1">
           <span>
             4.5.1
-            <span class="status danger">
+            <span class="status notstarted">
               Исследование источников данных
             </span>
           </span>
@@ -558,6 +626,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -568,7 +640,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-5-1-a">
           <span>
             4.5.1.a
-            <span class="status success">
+            <span class="status complete">
               Сообщалось в интернете
             </span>
           </span>
@@ -600,6 +672,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -610,7 +686,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-6-1">
           <span>
             4.6.1
-            <span class="status danger">
+            <span class="status notstarted">
               Исследование источников данных
             </span>
           </span>
@@ -622,6 +698,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -632,7 +712,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-6-1-a">
           <span>
             4.6.1.a
-            <span class="status success">
+            <span class="status complete">
               Сообщалось в интернете
             </span>
           </span>
@@ -670,6 +750,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -680,7 +764,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-7-1">
           <span>
             4.7.1
-            <span class="status danger">
+            <span class="status notstarted">
               Исследование источников данных
             </span>
           </span>
@@ -713,6 +797,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -723,7 +811,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-c-1-a">
           <span>
             4.c.1.a
-            <span class="status success">
+            <span class="status complete">
               Сообщалось в интернете
             </span>
           </span>
@@ -739,6 +827,10 @@ a) учащихся 2/3 классов; b) выпускников начальн
         </a>
       </div>
     
+
+      
+      
+      
       
       
       
@@ -749,7 +841,7 @@ a) учащихся 2/3 классов; b) выпускников начальн
         <a href="/sdg-site-armenia/ru/4-c-1">
           <span>
             4.c.1
-            <span class="status danger">
+            <span class="status notstarted">
               Исследование источников данных
             </span>
           </span>
@@ -781,6 +873,10 @@ b) начальной школе; c) младшей средней
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -791,7 +887,7 @@ b) начальной школе; c) младшей средней
         <a href="/sdg-site-armenia/ru/4-a-1">
           <span>
             4.a.1
-            <span class="status success">
+            <span class="status complete">
               Сообщалось в интернете
             </span>
           </span>
@@ -830,6 +926,10 @@ f) раздельными минимально оборудованными ту
     </div>
     <div class="indicator-cards col-md-6 row no-gutters">
     
+
+      
+      
+      
       
       
       
@@ -840,7 +940,7 @@ f) раздельными минимально оборудованными ту
         <a href="/sdg-site-armenia/ru/4-b-1">
           <span>
             4.b.1
-            <span class="status danger">
+            <span class="status notstarted">
               Исследование источников данных
             </span>
           </span>
@@ -858,12 +958,16 @@ f) раздельными минимально оборудованными ту
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-9">
-        <a href="mailto:test@example.com">Свяжитесь с нами</a>
-        
-      </div>
-      <div class="col-xs-3 text-right">
-        <a href="/sdg-site-armenia/faq/">Часто задаваемые вопросы</a> | <a href="/sdg-site-armenia/about/cookies-and-privacy/">Cookies</a>
+      <div class="col-xs-12">
+        <div id="footerLinks">
+          <ul>
+            <li><a href="mailto:test@example.com">Свяжитесь с нами</a></li>
+            
+            
+            <li><a href="/sdg-site-armenia/faq/">Часто задаваемые вопросы</a></li>
+            <li><a href="/sdg-site-armenia/about/cookies-and-privacy/">Cookies</a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -876,7 +980,7 @@ f) раздельными минимально оборудованными ту
 <!-- /.container </div> -->
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
@@ -891,10 +995,8 @@ f) раздельными минимально оборудованными ту
 <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
-<script>
-  var remoteDataBaseUrl = 'https://armstat.github.io/sdg-data-armenia/staging';
-</script>
-<script src='/sdg-site-armenia/assets/js/sdg.js?v=20190620000055'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
+<script src='/sdg-site-armenia/assets/js/sdg.js?v=20190620205351'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
@@ -905,7 +1007,7 @@ $(function() {
       });
 
       $.ajax({
-        url: 'https://armstat.github.io/sdg-data-armenia/staging/comb/' + domData.id + '.json',
+        url: opensdg.remoteDataBaseUrl + '/comb/' + domData.id + '.json',
         success: function(res) {
 
           $('.async-loading').remove();
@@ -925,7 +1027,8 @@ $(function() {
             geographicalArea: domData.geographicalarea,
             showData: domData.showdata,
             footnote: domData.footnote,
-            graphType: domData.graphtype
+            graphType: domData.graphtype,
+            startValues: domData.startvalues
           }),
           view  = new indicatorView(model, {
             rootElement: '#indicatorData',
