@@ -4,14 +4,14 @@
       "title": "Повсеместная ликвидация нищеты во всех ее формах",
       "indicators": [{
           "id": "1-3-1-e",
-          "title": "Proportion of families receiving family benefits to households",
+          "title": "Доля семей, получающих семейные пособия от общего числа домохозяйств",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-e",
           "status": "complete"
         },{
           "id": "1-3-1-g",
-          "title": "Proportion of beneficiaries of old age, disability and in case of losing a breadwinner to the total number of population at the end of the year",
+          "title": "Доля получателей пенсии по старости, инвалидности и в случае потери кормильца от общей численности населения на конец года",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-g",
@@ -25,14 +25,14 @@
           "status": "notstarted"
         },{
           "id": "1-4-1-b",
-          "title": "Centralized sewerage system",
+          "title": "Централизованная канализация",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-4-1-b",
           "status": "complete"
         },{
           "id": "1-3-1-d",
-          "title": "Ratio of elderly pensioners.               Ratio of age pensioners and the retirement age stipulated by law and aged population",
+          "title": "Соотношение пожилых пенсионеров. Соотношение пенсионеров по возрасту и пенсионного возраста, установленных законом, и по возрасту населения",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-d",
@@ -46,7 +46,7 @@
           "status": "notstarted"
         },{
           "id": "1-3-1-f",
-          "title": "Proportion of families receiving social benefits to households",
+          "title": "Доля семей, получающих социальные пособия от общего числа домохозяйств",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-f",
@@ -60,7 +60,7 @@
           "status": "notstarted"
         },{
           "id": "1-3-1-c",
-          "title": "Proportion of pensioners to the total number of population at the end of the year",
+          "title": "Доля пенсионеров в общей численности населения на конец года",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-c",
@@ -74,21 +74,21 @@
           "status": "notstarted"
         },{
           "id": "1-3-1-b",
-          "title": "Children with disabilities from diseases (aged 0-17 years)",
+          "title": "Дети с инвалидностью от болезней (в возрасте 0-17 лет)",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-b",
           "status": "complete"
         },{
           "id": "1-4-1-a",
-          "title": "Centralized water supply",
+          "title": "Централизованное водоснабжение",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-4-1-a",
           "status": "complete"
         },{
           "id": "1-5-1-a",
-          "title": "Number of deaths,  temporarily evacuated and directly affected persons attributed to disasters per 100,000 population  by types of disasters",
+          "title": "Число смертей, временно эвакуированных и непосредственно пострадавших лиц в результате стихийных бедствий, на 100 000 человек населения по видам стихийных бедствий",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-5-1-a",
@@ -102,14 +102,14 @@
           "status": "notstarted"
         },{
           "id": "1-3-1-h",
-          "title": "Children of orphans (aged 0-17 years) at the end of the year",
+          "title": "Дети в детских домах (в возрасте 0-17 лет) на конец года",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-h",
           "status": "complete"
         },{
           "id": "1-3-1-ja",
-          "title": "Adopted children (aged 0-17 years)",
+          "title": "Усыновленные дети (в возрасте 0-17 лет)",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-ja",
@@ -130,7 +130,7 @@
           "status": "complete"
         },{
           "id": "1-3-1-a",
-          "title": "Proportion of registered disabled people to the total number of population at the end of the year",
+          "title": "Доля зарегистрированных людей с инвалидносью в общей численности населения на конец года",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-a",
@@ -144,7 +144,7 @@
           "status": "complete"
         },{
           "id": "1-3-1-i",
-          "title": "Children who return to relatives from orphanages (aged 0-17 years)",
+          "title": "Дети, которые возвращаются к родственникам из детских домов (в возрасте 0-17 лет)",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-i",
@@ -179,14 +179,14 @@
           "status": "notstarted"
         },{
           "id": "1-3-1-jc",
-          "title": "Number of beneficiaries receiving maternity benefits granted to non-employed person at the end of the year",
+          "title": "Количество бенефициаров, получающих пособия по материнству, предоставленные неработающим женщинам на конец года",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-jc",
           "status": "complete"
         },{
           "id": "1-3-1-j",
-          "title": "Children with disabilities living in orphanages (aged 0-17 years) at the end of the year",
+          "title": "Дети-инвалиды, проживающие в детских домах (в возрасте 0–17 лет) на конец года",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-j",
@@ -200,7 +200,7 @@
           "status": "notstarted"
         },{
           "id": "1-3-1-jb",
-          "title": "Adopted children by social groups (aged 0-17 years)",
+          "title": "Усыновленные дети по социальным группам (в возрасте 0-17 лет)",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-jb",
@@ -324,7 +324,7 @@
           "status": "complete"
         },{
           "id": "3-8-1-a",
-          "title": "Providing antenatal care and care by qualified specialis",
+          "title": "Предоставление дородового ухода и ухода квалифицированным специалистом",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-8-1-a",
@@ -359,21 +359,21 @@
           "status": "complete"
         },{
           "id": "3-3-4-b",
-          "title": "Coverage of 3 doses of vaccine with hepatitis B alone or combined ingredient with 95 and more ingredients",
+          "title": "Охват 3 дозами вакцины с гепатитом В отдельно или в сочетании с 95 и более ингредиентами",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-3-4-b",
           "status": "complete"
         },{
           "id": "3-9-1-a",
-          "title": "Number of deaths caused by registered social-domestic toxication cases",
+          "title": "Количество смертей, вызванных зарегистрированными случаями социального и бытового отравления",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-9-1-a",
           "status": "complete"
         },{
           "id": "3-1-1-a",
-          "title": "Maternal mortality ratio (average three-year indicator)",
+          "title": "Коэффициент материнской смертности (средний трехлетний показатель)",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-1-1-a",
@@ -387,7 +387,7 @@
           "status": "complete"
         },{
           "id": "3-3-3-a",
-          "title": "Number of local cases in malaria per year",
+          "title": "Количество местных случаев малярии в год",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-3-3-a",
@@ -401,7 +401,7 @@
           "status": "complete"
         },{
           "id": "3-b-1-b",
-          "title": "Indicator of coverage  in vaccines among targeted quantities, 2 years of age",
+          "title": "Показатель охвата вакцинами среди целевых величин, возраст 2 года",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-b-1-b",
@@ -415,7 +415,7 @@
           "status": "complete"
         },{
           "id": "3-c-1-a",
-          "title": "Number of physicians conducting professional activities per 10,000 population",
+          "title": "Число врачей, осуществляющих профессиональную деятельность на 10000 человек населения.",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-c-1-a",
@@ -429,7 +429,7 @@
           "status": "complete"
         },{
           "id": "3-b-1-c",
-          "title": "Indicator of coverage  in vaccines among targeted quantities, 7 years of age",
+          "title": "Показатель охвата вакцинами среди целевых величин, возраст 7 лет",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-b-1-c",
@@ -457,7 +457,7 @@
           "status": "notstarted"
         },{
           "id": "3-3-1-d",
-          "title": "Percentage of HIV patients, who receive ARV   treatment, who have unrecognized level of viral load (VL)",
+          "title": "Процент ВИЧ-инфицированных, получающих АРВ-терапию, у которых уровень вирусной нагрузки (ВН) не распознан",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-3-1-d",
@@ -478,7 +478,7 @@
           "status": "complete"
         },{
           "id": "3-8-1-b",
-          "title": "At least one ultrasound examination during pregnancy",
+          "title": "Как минимум одно ультразвуковое исследование во время беременности",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-8-1-b",
@@ -506,21 +506,21 @@
           "status": "complete"
         },{
           "id": "3-3-5-b",
-          "title": "Case of death from leishmaniosis",
+          "title": "Случаи смерти от лейшманиоза",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-3-5-b",
           "status": "complete"
         },{
           "id": "3-3-4-a",
-          "title": "0-18 years old  patients with acute hepatitis B  ( per 100,000 population)",
+          "title": "Пациенты 0–18 лет с острым гепатитом В (на 100 000 населения)",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-3-4-a",
           "status": "complete"
         },{
           "id": "3-3-1-a",
-          "title": "HIV infection transmission from HIV-infected mothers with non-breastfeeding to child",
+          "title": "Передача ВИЧ инфекции от ВИЧ-инфицированных матерей, не кормящих грудью, ребенку",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-3-1-a",
@@ -555,14 +555,14 @@
           "status": "notstarted"
         },{
           "id": "3-8-1-c",
-          "title": "During the first two days after birth, the mother's postnatal check",
+          "title": "В течение первых двух дней после рождения, послеродовой осмотр матери",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-8-1-c",
           "status": "complete"
         },{
           "id": "3-3-2-a",
-          "title": "Multi-drug resistant tuberculosis morbidity indicator (per 100,000 population)",
+          "title": "Показатель заболеваемости туберкулезом с множественной лекарственной устойчивостью (на 100 000 населения)",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-3-2-a",
@@ -576,21 +576,21 @@
           "status": "complete"
         },{
           "id": "3-7-2-a",
-          "title": "Adolescent birth rate (aged 15-17 years) per 1,000 women in that age group",
+          "title": "Коэффициент рождаемости среди подростков (в возрасте 15-17 лет) на 1000 женщин в этой возрастной группе",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-7-2-a",
           "status": "complete"
         },{
           "id": "3-8-1-d",
-          "title": "During the first two days after birth, the newborn testing",
+          "title": "В течение первых двух дней после рождения осмотр новорожденного",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-8-1-d",
           "status": "complete"
         },{
           "id": "3-3-1-c",
-          "title": "Percentage of people living with HIV, who know their  status, who receive ARV treatment",
+          "title": "Процент людей, живущих с ВИЧ, которые знают свой статус и получают АРВ-терапию",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-3-1-c",
@@ -604,14 +604,14 @@
           "status": "notstarted"
         },{
           "id": "3-5-1-a",
-          "title": "The number of patients suffering from drug addiction",
+          "title": "Количество пациентов, страдающих наркоманией",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-5-1-a",
           "status": "complete"
         },{
           "id": "3-3-1-b",
-          "title": "Percentage of people living with HIV, who know their  status",
+          "title": "Процент людей, живущих с ВИЧ, которые знают свой статус",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-3-1-b",
@@ -625,14 +625,14 @@
           "status": "complete"
         },{
           "id": "3-3-5-a",
-          "title": "Number of patients with leishmaniasis",
+          "title": "Количество пациентов с лейшманиозом",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-3-5-a",
           "status": "complete"
         },{
           "id": "3-2-2-a",
-          "title": "Infant mortality rate",
+          "title": "Коэффициент неонатальной смертности на 1 000 живорождений",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-2-2-a",
@@ -653,7 +653,7 @@
           "status": "complete"
         },{
           "id": "3-b-1-a",
-          "title": "Indicator of coverage  in vaccines among targeted quantities, 1 year of age",
+          "title": "Показатель охвата вакцинами среди целевых величин, возраст 1 год",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-b-1-a",
@@ -694,7 +694,7 @@
           "status": "notstarted"
         },{
           "id": "4-5-1-a",
-          "title": "Gender parity index",
+          "title": "Индекс гендерного паритета",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-5-1-a",
@@ -715,7 +715,7 @@
           "status": "notstarted"
         },{
           "id": "4-3-1-a",
-          "title": "Gross Enrollment Ration in general educatioin",
+          "title": "Валовой коэффициент охвата образованием в общем образовании",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-3-1-a",
@@ -729,14 +729,14 @@
           "status": "notstarted"
         },{
           "id": "4-6-1-a",
-          "title": "Literacy rate among population aged from 10-24  years old",
+          "title": "Уровень грамотности населения в возрасте от 10-24 лет",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-6-1-a",
           "status": "complete"
         },{
           "id": "4-1-1b",
-          "title": "Proportion of children at the end of primary achieving at least a minimum proficiency level in  (i) reading and (ii) mathematics",
+          "title": "Доля детей в конце начальной школы, достигающих, по крайней мере, минимального уровня владения (i) чтением и (ii) математикой",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-1-1b",
@@ -750,7 +750,7 @@
           "status": "notstarted"
         },{
           "id": "4-1-1c",
-          "title": "Proportion of children at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics",
+          "title": "Доля детей в конце младших классов средней школы, достигших, по крайней мере, минимального уровня владения (i) чтением и (ii) математикой",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-1-1c",
@@ -764,14 +764,14 @@
           "status": "complete"
         },{
           "id": "4-c-1-a",
-          "title": "Proportion of trained teachers",
+          "title": "Доля подготовленных учителей",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-c-1-a",
           "status": "complete"
         },{
           "id": "4-4-1-a",
-          "title": "Number of pupils per computer in general education schools",
+          "title": "Число учеников на компьютер в общеобразовательных школах.",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-4-1-a",
@@ -799,7 +799,7 @@
           "status": "notstarted"
         },{
           "id": "4-2-2-a",
-          "title": "Gross enrolment  of children 3 -5 years of age in pre-primary education",
+          "title": "Валовая численность детей в возрасте от 3-5 лет в дошкольном образовании",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-2-2-a",
@@ -812,7 +812,7 @@
       "title": "Обеспечение гендерного равенства и расширение прав и возможностей всехженщин и девочек",
       "indicators": [{
           "id": "5-a-1-b-a-2",
-          "title": "Proportion of men age 15-49 with ownership (alone, jointly with someone else or both alone and jointly with someone else) over agricultural or non-agricultural land, who have a title deed and their name is listed on the title deed",
+          "title": "Доля мужчин в возрасте 15-49 лет, имеющих право собственности (самостоятельно, совместно с кем-либо или вместе или совместно, с кем-либо еще) на сельскохозяйственные или несельскохозяйственные земли, у которых есть титул на право собственности и их имя указано в титуле",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/5-a-1-b-a-2",
@@ -833,7 +833,7 @@
           "status": "notstarted"
         },{
           "id": "5-a-1-a-a",
-          "title": "Proportion of households with ownership over agricultural land",
+          "title": "Доля домохозяйств, владеющих землями сельскохозяйственного назначения",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/5-a-1-a-a",
@@ -854,14 +854,14 @@
           "status": "complete"
         },{
           "id": "5-a-1-b-a-1",
-          "title": "Proportion of women age 15-49 with ownership (alone, jointly with someone else or both alone and jointly with someone else) over agricultural or non-agricultural land, who have a title deed and their name is listed on the title deed",
+          "title": "Доля женщин в возрасте 15-49 лет, имеющих право  собственности (самостоятельно, совместно с кем-либо или совместно и единолично и совместно с кем-либо еще) на сельскохозяйственные или несельскохозяйственные земли, которые имеют правоустанавливающий документ и их имя указано в титульном акте",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/5-a-1-b-a-1",
           "status": "complete"
         },{
           "id": "5-6-1-a",
-          "title": "Women currently married or in union that are using any type of contraception, only Condition 3 'She can make a decision about healthcare either by herself or jointly' fulfilled",
+          "title": "Женщины, которые в настоящее время состоят в браке или в союзе и используют какие-либо методы контрацепции, выполнено только условие 3 'Она может принимать решение о здравоохранении самостоятельно или совместно' выполнено",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/5-6-1-a",
@@ -924,7 +924,7 @@
           "status": "notstarted"
         },{
           "id": "5-b-1-a",
-          "title": "Proportion of households who own a mobile telephone",
+          "title": "Доля домохозяйств, имеющих мобильный телефон",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/5-b-1-a",
@@ -972,7 +972,7 @@
           "status": "notstarted"
         },{
           "id": "6-2-1-c",
-          "title": "Proportion of population using sanitary-hygienic services defined by sanitation norms",
+          "title": "Доля населения, пользующегося санитарно-гигиеническими услугами, определенные санитарными нормами.",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/6-2-1-c",
@@ -986,7 +986,7 @@
           "status": "notstarted"
         },{
           "id": "6-2-1-b",
-          "title": "Proportion of population using hand-washing facility with soap and water",
+          "title": "Доля населения, пользующегося удобствами для мытья рук с мылом и водой",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/6-2-1-b",
@@ -1021,14 +1021,14 @@
           "status": "notstarted"
         },{
           "id": "6-2-1-a",
-          "title": "Proportion of population using safely managed sanitation facility",
+          "title": "Доля населения, пользующегося безопасным санитарно-техническими удобствами",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/6-2-1-a",
           "status": "complete"
         },{
           "id": "6-1-1-a",
-          "title": "Proportion of  households with centralized water supply",
+          "title": "Доля домохозяйств с централизованным водоснабжением",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/6-1-1-a",
@@ -1049,7 +1049,7 @@
           "status": "notstarted"
         },{
           "id": "6-3-1-a",
-          "title": "Proportion of insufficiently treated wastewater",
+          "title": "Доля недостаточно очищенных сточных вод",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/6-3-1-a",
@@ -1076,7 +1076,7 @@
           "status": "notstarted"
         },{
           "id": "7-1-2-a",
-          "title": "Proportion of households with primary reliance on clean fuels and technology",
+          "title": "Доля домохозяйств, которые в первую очередь полагаются на чистое топливо и технологии",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/7-1-2-a",
@@ -1124,7 +1124,7 @@
       "title": "Содействие поступательному, всеохватному и устойчивому экономическому росту,полной и производительной занятости и достойной работе для всех",
       "indicators": [{
           "id": "8-5-1-a",
-          "title": "Average Monthly Nominal Wages / Salaries",
+          "title": "Среднемесячная номинальная заработная плата",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/8-5-1-a",
@@ -1367,7 +1367,7 @@
           "status": "notstarted"
         },{
           "id": "10-7-2-a",
-          "title": "Percentage of returned migrants who undertook paid work during the last 7 days",
+          "title": "Процент возвратившихся мигрантов, которые взялись за оплачиваемую работу в течение последних 7 дней",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/10-7-2-a",
@@ -1423,7 +1423,7 @@
           "status": "notstarted"
         },{
           "id": "10-7-2-b",
-          "title": "Proportion of individual asylum applications granted",
+          "title": "Доля индивидуальных заявлений о предоставлении убежища",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/10-7-2-b",
@@ -1520,7 +1520,7 @@
           "status": "notstarted"
         },{
           "id": "11-5-1-a",
-          "title": "Number of deaths,  temporarily evacuated and directly affected persons attributed to disasters per 100,000 population  by types of disasters",
+          "title": "Количество смертей, временно эвакуированных и непосредственно пострадавших в результате стихийных бедствий на 100 000 человек населения по видам стихийных бедствий",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/11-5-1-a",
@@ -1561,7 +1561,7 @@
       "title": "Обеспечение перехода к рациональным моделям потребления и производства",
       "indicators": [{
           "id": "12-3-1-a",
-          "title": "Food loss",
+          "title": "Потеря продуктов питания",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/12-3-1-a",
@@ -1714,7 +1714,7 @@
           "status": "notstarted"
         },{
           "id": "13-1-1-a",
-          "title": "Number of deaths,  temporarily evacuated and directly affected persons attributed to disasters per 100,000 population  by types of disasters",
+          "title": "Количество смертей, временно эвакуированных и непосредственно пострадавших в результате стихийных бедствий на 100 000 человек населения по видам стихийных бедствий",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/13-1-1-a",
@@ -1776,7 +1776,7 @@
           "status": "notstarted"
         },{
           "id": "14-a-1-a",
-          "title": "Budget allocated to research and complex protection related to lake Sevan",
+          "title": "Бюджет, выделенный на исследования и комплексную защиту озера Севан",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/14-a-1-a",
@@ -1804,7 +1804,7 @@
           "status": "notstarted"
         },{
           "id": "14-5-1-a",
-          "title": "Coverage of protected water areas in relation to lakes and reservoirs",
+          "title": "Охват охраняемых акваторий по отношению к озерам и водохранилищам.",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/14-5-1-a",
@@ -1818,7 +1818,7 @@
           "status": "notstarted"
         },{
           "id": "14-3-1-a",
-          "title": "Average Lake Sevan acidity (pH) measured at agreed suite of representative sampling stations",
+          "title": "Средняя кислотность (pH) озера Севан, измеренная на согласованном наборе репрезентативных станций отбора проб",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/14-3-1-a",
@@ -1845,7 +1845,7 @@
           "status": "complete"
         },{
           "id": "15-5-1-a-2",
-          "title": "Registered high and low plant species, of which",
+          "title": "Зарегистрированы высокие и низкие виды растений, из которых",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/15-5-1-a-2",
@@ -1929,7 +1929,7 @@
           "status": "notstarted"
         },{
           "id": "15-5-1-a-1",
-          "title": "Registered vertebrate and invertebrate species, of which",
+          "title": "Зарегистрированные виды позвоночных и беспозвоночных, из которых",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/15-5-1-a-1",
@@ -1984,7 +1984,7 @@
           "status": "complete"
         },{
           "id": "16-1-1-a",
-          "title": "Number of homicide cases per 100,000 population",
+          "title": "Количество убийств на 100 000 населения",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/16-1-1-a",
@@ -2228,7 +2228,7 @@
           "status": "notstarted"
         },{
           "id": "17-1-1-a",
-          "title": "Total central government revenue as a proportion of GDP, by source, including",
+          "title": "Общие доходы центрального правительства как доля ВВП, по источникам, в том числе",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/17-1-1-a",
@@ -2270,7 +2270,7 @@
           "status": "complete"
         },{
           "id": "17-4-1-a",
-          "title": "External debt service as percentage of exports goods and services",
+          "title": "Обслуживание внешнего долга в процентах от экспорта товаров и услуг",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/17-4-1-a",
@@ -2284,7 +2284,7 @@
           "status": "complete"
         },{
           "id": "17-3-1-a",
-          "title": "Foreign direct investments (FDI)",
+          "title": "Прямые иностранные инвестиции (ПИИ)",
           "description": "",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/17-3-1-a",
