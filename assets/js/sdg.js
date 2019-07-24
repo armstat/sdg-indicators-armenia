@@ -633,11 +633,6 @@ var indicatorDataStore = function(dataUrl) {
   this.onSelectionUpdate = new event(this);
   this.onNoHeadlineData = new event(this);
 
-  // data rounding:
-  this.roundingFunc = function(value) {
-  return value;
-};
-
   // json conversion:
   var convertJsonFormat = function(data) {
     var keys = _.keys(data);
@@ -774,7 +769,11 @@ var indicatorDataStore = function(dataUrl) {
 
       // only apply a rounding function for non-zero values:
       if(item.Value != 0) {
-        item.Value = that.roundingFunc(item.Value);
+        // For rounding, use a function that can be set on the global opensdg
+        // object, for easier control: opensdg.dataRounding()
+        if (typeof opensdg.dataRounding === 'function') {
+          item.Value = opensdg.dataRounding(item.Value);
+        }
       }
 
       // remove any undefined/null values:
@@ -796,12 +795,13 @@ var indicatorDataStore = function(dataUrl) {
       spanGaps: false
     };
 
-    that.footerFields = {
-      'Source': that.dataSource,
-      'Geographical Area': that.geographicalArea,
-      'Unit of Measurement': that.measurementUnit,
-      'Footnote': that.footnote,
-    };
+    that.footerFields = {};
+    that.footerFields[translations.indicator.source] = that.dataSource;
+    that.footerFields[translations.indicator.geographical_area] = that.geographicalArea;
+    that.footerFields[translations.indicator.unit_of_measurement] = that.measurementUnit;
+    that.footerFields[translations.indicator.footnote] = that.footnote;
+    // Filter out the empty values.
+    that.footerFields = _.pick(that.footerFields, _.identity);
   }());
 
   var headlineColor = '777777';
@@ -827,7 +827,7 @@ var indicatorDataStore = function(dataUrl) {
         return that.selectedUnit ? i.Units : i.Year;
       })
       .map(function (d) {
-        return _.pick(d, _.identity);
+        return _.pick(d, function(val) { return val !== null });
       })
       .value();
   };
@@ -1061,6 +1061,14 @@ var indicatorDataStore = function(dataUrl) {
     // get the headline data:
     var headline = this.getHeadline();
 
+    // Catch the case where this is the initial display, there is a default
+    // selected unit (the first one), there is a headline, and this headline
+    // uses another unit.
+    if (options.initial && headline.length && this.selectedUnit && this.selectedUnit != headline[0]['Units']) {
+      // In this scenario we need to correct the selected unit here.
+      this.selectedUnit = headline[0]['Units'];
+    }
+
     // all units for headline data:
     if(headline.length) {
       headlineTable = {
@@ -1163,7 +1171,8 @@ var indicatorDataStore = function(dataUrl) {
         }
 
         this.onUnitsComplete.notify({
-          units: this.units
+          units: this.units,
+          selectedUnit: this.selectedUnit
         });
       }
 
