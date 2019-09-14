@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
+        <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CString.prototype.includes"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
 // This is where we initialise any global variables, namespaced in "opensdg".
@@ -80,7 +82,6 @@ var translations = {
 
         <!-- Basic Page Needs
         ================================================== -->
-        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Mobile Specific Metas
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
@@ -89,7 +90,17 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
         
-        <title>Indicators For The Sustainable Development Goals</title>
+
+        
+
+        <title>
+          
+            
+        Цель 8 - 
+        
+          
+        </title>
+
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -113,22 +124,24 @@ var translations = {
         
 
         
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-site-armenia/assets/css/default.css?v=20190914001040">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/sdg-site-armenia/assets/css/default.css?v=20190914233244">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
-        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
-        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-site-armenia/assets/css/custom.css?v=20190914001040"><!-- ShareThis BEGIN --><!-- ShareThis END -->
-                                                                                                                                              
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-site-armenia/assets/css/custom.css?v=20190914233244"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+
     </head>
-<body class="language-ru">
+<body class="language-ru layout-goal-by-target">
 <!-- <div class="container"> -->
+
+<script>translations['header'] = {"alpha":"Альфа","default_contrast":"стандартный контраст","disable_high_contrast":"Отключить высокую контрастность","disclaimer":"Это сайт находится в разработке. Мы рады вашим отзывам.","enable_high_contrast":"Включить высокую контрастность","high_contrast":"высокий контраст","skip_link":"Перейти к главному содержанию","tag_line":"17 Целей, чтобы преобразовать наш мир"};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Перейти к главному содержанию</a>
 <div id="disclaimer">
@@ -163,7 +176,13 @@ var translations = {
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
-        <li><span data-target="menu">Меню</span></li>
+        <li id="menuToggle"
+            aria-label="Menu toggle. Click to expand or collapse the menu."
+            aria-haspopup="true"
+            aria-expanded="false">
+          <span data-target="menu" tabindex="0"
+          role="navigation">Меню</span>
+        </li>
         <li><span data-target="search">Поиск</span></li>
       </ul>
 
@@ -189,7 +208,7 @@ var translations = {
       <div id="search" class="menu-target">
   <input id="indicator_search" title="Поиск показателя" placeholder="Поиск показателя" data-url="/sdg-site-armenia/ru/indicators.json" data-pageurl="/sdg-site-armenia/ru/search/?q=" />
   <label for="indicator_search">
-    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button><span>Поиск:</span>
+    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Поиск показателя></i></button><span>Поиск:</span>
   </label>
 </div>
 
@@ -198,6 +217,9 @@ var translations = {
   </div>
 
 </header>
+
+
+
 
 
 
@@ -229,6 +251,7 @@ var translations = {
   
 </ol>
 
+
   <div class="visible-md-block visible-lg-block">
     <div class="col-md-6">
       <h4>Задачи</h4>
@@ -240,6 +263,8 @@ var translations = {
 
   
   
+    
+    
     
     
     
@@ -267,7 +292,7 @@ var translations = {
           <span>
             8.1.1
             <span class="status complete">
-              Сообщалось в интернете
+              Опубликован
             </span>
           </span>
           Ежегодные темпы роста реального ВВП на
@@ -278,6 +303,8 @@ var translations = {
     
     </div>
   
+    
+    
     
     
     
@@ -310,7 +337,7 @@ var translations = {
           <span>
             8.2.1
             <span class="status complete">
-              Сообщалось в интернете
+              Опубликован
             </span>
           </span>
           Ежегодные темпы роста реального ВВП на
@@ -321,6 +348,8 @@ var translations = {
     
     </div>
   
+    
+    
     
     
     
@@ -355,7 +384,7 @@ var translations = {
           <span>
             8.3.1
             <span class="status complete">
-              Сообщалось в интернете
+              Опубликован
             </span>
           </span>
           Доля неформальной занятости в несельскохозяйственных
@@ -366,6 +395,8 @@ var translations = {
     
     </div>
   
+    
+    
     
     
     
@@ -402,7 +433,7 @@ var translations = {
           <span>
             8.4.1
             <span class="status notstarted">
-              Исследование источников данных
+              В процессе разработки
             </span>
           </span>
           Совокупные ресурсозатраты и ресурсозатраты
@@ -427,7 +458,7 @@ var translations = {
           <span>
             8.4.2
             <span class="status complete">
-              Сообщалось в интернете
+              Опубликован
             </span>
           </span>
           Совокупное внутреннее материальное потребление
@@ -441,6 +472,8 @@ var translations = {
     
     </div>
   
+    
+    
     
     
     
@@ -471,7 +504,7 @@ var translations = {
           <span>
             8.5.1
             <span class="status notstarted">
-              Исследование источников данных
+              В процессе разработки
             </span>
           </span>
           Средний почасовой заработок женщин и
@@ -496,7 +529,7 @@ var translations = {
           <span>
             8.5.1.a
             <span class="status complete">
-              Сообщалось в интернете
+              Опубликован
             </span>
           </span>
           Среднемесячная номинальная заработная плата
@@ -526,7 +559,7 @@ var translations = {
           <span>
             8.5.2
             <span class="status complete">
-              Сообщалось в интернете
+              Опубликован
             </span>
           </span>
           Уровень безработицы в разбивке по полу,
@@ -538,6 +571,8 @@ var translations = {
     
     </div>
   
+    
+    
     
     
     
@@ -567,7 +602,7 @@ var translations = {
           <span>
             8.6.1
             <span class="status complete">
-              Сообщалось в интернете
+              Опубликован
             </span>
           </span>
           Доля молодежи (в возрасте от 15 до 24 лет),
@@ -579,6 +614,8 @@ var translations = {
     
     </div>
   
+    
+    
     
     
     
@@ -613,7 +650,7 @@ var translations = {
           <span>
             8.7.1
             <span class="status complete">
-              Сообщалось в интернете
+              Опубликован
             </span>
           </span>
           Доля и число детей в возрасте от 5 до 17 лет,
@@ -625,6 +662,8 @@ var translations = {
     
     </div>
   
+    
+    
     
     
     
@@ -656,7 +695,7 @@ var translations = {
           <span>
             8.8.1
             <span class="status complete">
-              Сообщалось в интернете
+              Опубликован
             </span>
           </span>
           Производственный травматизм со смертельным
@@ -681,7 +720,7 @@ var translations = {
           <span>
             8.8.2
             <span class="status notstarted">
-              Исследование источников данных
+              В процессе разработки
             </span>
           </span>
           Ситуация с соблюдением трудовых прав на
@@ -697,6 +736,8 @@ var translations = {
     
     </div>
   
+    
+    
     
     
     
@@ -728,7 +769,7 @@ var translations = {
           <span>
             8.9.1
             <span class="status notstarted">
-              Исследование источников данных
+              В процессе разработки
             </span>
           </span>
           Непосредственный вклад туризма в ВВП в
@@ -753,7 +794,7 @@ var translations = {
           <span>
             8.9.2
             <span class="status notstarted">
-              Исследование источников данных
+              В процессе разработки
             </span>
           </span>
           Доля занятых в индустрии устойчивого туризма
@@ -764,6 +805,8 @@ var translations = {
     
     </div>
   
+    
+    
     
     
     
@@ -794,7 +837,7 @@ var translations = {
           <span>
             8.10.1
             <span class="status notstarted">
-              Исследование источников данных
+              В процессе разработки
             </span>
           </span>
           Число a) филиалов коммерческих банков и
@@ -818,7 +861,7 @@ b) банкоматов на 100 000 взрослых
           <span>
             8.10.2
             <span class="status complete">
-              Сообщалось в интернете
+              Опубликован
             </span>
           </span>
           Доля взрослых (от 15 лет), имеющих счет в
@@ -831,6 +874,8 @@ b) банкоматов на 100 000 взрослых
     
     </div>
   
+    
+    
     
     
     
@@ -863,7 +908,7 @@ b) банкоматов на 100 000 взрослых
           <span>
             8.a.1
             <span class="status notstarted">
-              Исследование источников данных
+              В процессе разработки
             </span>
           </span>
           Объем обязательств и выплат в рамках инициативы
@@ -874,6 +919,8 @@ b) банкоматов на 100 000 взрослых
     
     </div>
   
+    
+    
     
     
     
@@ -904,7 +951,7 @@ b) банкоматов на 100 000 взрослых
           <span>
             8.b.1
             <span class="status notstarted">
-              Исследование источников данных
+              В процессе разработки
             </span>
           </span>
           Наличие разработанной и осуществляемой
@@ -951,7 +998,6 @@ b) банкоматов на 100 000 взрослых
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
@@ -961,7 +1007,9 @@ b) банкоматов на 100 000 взрослых
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/sdg-site-armenia/assets/js/sdg.js?v=20190914001040'></script><script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src='/sdg-site-armenia/assets/js/sdg.js?v=20190914233244'></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -997,7 +1045,7 @@ $(function() {
           view  = new indicatorView(model, {
             rootElement: '#indicatorData',
             legendElement: '#plotLegend',
-            maxChartHeight: 600,
+            maxChartHeight: 420,
             tableColumnDefs: [
               { maxCharCount: 25 }, // nowrap
               { maxCharCount: 35, width: 200 },

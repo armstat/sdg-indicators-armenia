@@ -10,11 +10,15 @@
 
 
 
+
+
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
+        <meta charset="utf-8">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CString.prototype.includes"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
 // This is where we initialise any global variables, namespaced in "opensdg".
@@ -92,7 +96,6 @@ var translations = {
 
         <!-- Basic Page Needs
         ================================================== -->
-        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- Mobile Specific Metas
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
@@ -101,9 +104,17 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
         
+
+        
+
         <title>
-        Indicator 10.2.1 - Goal 10 - Reduced inequalities
+          
+            
+        Indicator 10.2.1 - Goal 10
+        
+          
         </title>
+
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -127,22 +138,24 @@ var translations = {
         
 
         
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/sdg-site-armenia/assets/css/default.css?v=20190914001040">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/sdg-site-armenia/assets/css/default.css?v=20190914233244">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
-        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
-        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><link rel="stylesheet" href="/sdg-site-armenia/assets/css/custom.css?v=20190914001040"><!-- ShareThis BEGIN --><!-- ShareThis END -->
-                                                                                                                                              
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-site-armenia/assets/css/custom.css?v=20190914233244"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+
     </head>
-<body class="language-en">
+<body class="language-en layout-indicator">
 <!-- <div class="container"> -->
+
+<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World"};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
@@ -177,7 +190,13 @@ var translations = {
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
-        <li><span data-target="menu">Menu</span></li>
+        <li id="menuToggle"
+            aria-label="Menu toggle. Click to expand or collapse the menu."
+            aria-haspopup="true"
+            aria-expanded="false">
+          <span data-target="menu" tabindex="0"
+          role="navigation">Menu</span>
+        </li>
         <li><span data-target="search">Search</span></li>
       </ul>
 
@@ -203,7 +222,7 @@ var translations = {
       <div id="search" class="menu-target">
   <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/sdg-site-armenia/indicators.json" data-pageurl="/sdg-site-armenia/search/?q=" />
   <label for="indicator_search">
-    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button><span>Search:</span>
+    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indicator search></i></button><span>Search:</span>
   </label>
 </div>
 
@@ -252,7 +271,7 @@ var translations = {
   <% } %>
 </script>
 
-<script>translations['indicator'] = {"chart":"Chart","clear_all":"Clear all","clear_selections":"Clear selections","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download Chart CSV","download_csv":"Download CSV","download_csv_title":"Download as CSV","download_headline":"Download Headline CSV","download_headline_title":"Download headline data as CSV","download_source":"Download Source CSV","download_source_title":"Download source data as CSV","download_table":"Download Table CSV","edit":"Edit","edit_data":"Edit Data","edit_metadata":"Edit Metadata","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","legend_help":"Click on the legend to remove individual lines from the chart.","loading_map":"Loading map","map":"Map","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country_name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country_adjective statistics, this table should be consulted for information on national methodology and other %country_adjective-specific metadata information.","no_data_hint":"No options available because of filters above","select_all":"Select all","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","sub_categories":"Sub-categories","table":"Table","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
+<script>translations['indicator'] = {"chart":"Chart","clear_all":"Clear all","clear_selections":"Clear selections","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download Chart CSV","download_chart_image":"Download Chart Image","download_chart_image_title":"Download chart as image","download_csv":"Download CSV","download_csv_title":"Download as CSV","download_headline":"Download Headline CSV","download_headline_title":"Download headline data as CSV","download_source":"Download Source CSV","download_source_title":"Download source data as CSV","download_table":"Download Table CSV","edit":"Edit","edit_data":"Edit Data","edit_metadata":"Edit Metadata","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","legend_help":"Click on the legend to remove individual lines from the chart.","loading_map":"Loading map","map":"Map","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country_name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country_adjective statistics, this table should be consulted for information on national methodology and other %country_adjective-specific metadata information.","no_data_hint":"No options available because of filters above","select_all":"Select all","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","sub_categories":"Sub-categories","table":"Table","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
 
 <script>translations['data'] = {"Sex":"Sex","Age":"Age","Location":"Location","Employment status":"Employment status","Disaster type":"disaster type","Education type":"education type","Transportation type":"transportation type","Category":"Category","female":"female","male":"male","number":"number","rural":"rural","urban":"urban","total":"total","children":"children","aged 0-17 years":"aged 0-17 years","aged 5-11 years":"aged 5-11 years","aged 12-15 years":"aged 12-15 years","aged 16-17 years":"aged 16-17 years","aged 18-39 years":"aged 18-39 years","aged 40-62 years":"aged 40-62 years","aged 63 and older":"aged 63 and older","aged 65 and older":"aged 65 and older","aged 0-16 years":"aged 0-16 years","aged 17-65 years":"aged 17-65 years","aged 18-66 years":"aged 18-66 years","aged 0-4 years":"aged 0-4 years","aged 5-9 years":"aged 5-9 years","aged 10-14 years":"aged 10-14 years","aged 15-19 years":"aged 15-19 years","aged 20-24 years":"aged 20-24 years","aged 0-5 years":"aged 0-5 years","aged 6-17 years":"aged 6-17 years","aged 18-64 years":"aged 18-64 years","aged 15 years":"aged 15 years","aged 51 - 55 years":"aged 51 - 55 years","aged 56 - 62 years":"aged 56 - 62 years","15-29 age":"15-29 age","15-19 age":"15-19 age","20-24 age":"20-24 age","15-24 age":"15-24 age","25-29 age":"25-29 age","15-75 age":"15-75 age","with disabilities":"with disabilities","total to the total number of children with disabilities (aged 0-17 years)":"total to the total number of children with disabilities (aged 0-17 years)","economically active population":"economically active population","employed":"employed","wage employed":"wage employed","self-employed":"self-employed","other employed":"other employed","unemployment":"unemployment","economically inactive  population":"economically inactive population","pensioners":"pensioners","students":"students","other inactive population":"other inactive population","age-related":"age-related","on privileged terms":"on privileged terms","up to 51 years old":"up to 51 years old","long-term service":"long-term service","partially":"partially","disability":"disability","in case of losing a breadwinner":"in case of losing a breadwinner","by other laws":"by other laws","related to military service":"related to military service","old age":"old age","up to 1 year old":"up to 1 year old","aged 1-6 years":"aged 1-6 years","aged 7-9 years":"aged 7-9 years","aged 10-15 years":"aged 10-15 years","total to the population of respective age":"total to the population of respective age","total to children aged 0-17 years with disabilities":"total to children aged 0-17 years with disabilities","up to 6 months":"up to 6 months","from 6 months to 1 year":"from 6 months to 1 year","aged 1-5 years":"aged 1-5 years","aged 6-9 years":"aged 6-9 years","child with two parents":"child with two parents","single mother child":"single mother child","left without parental care":"left without parental care","other":"other","natural disaster":"natural disaster","man-made disaster":"man-made disaster","social-biological disaster":"social-biological disaster","education":"education","health":"health","social protection":"social protection","arable land":"arable land","sown areas":"sown areas","perennial plants":"perennial plants","wasting":"wasting","overweight":"overweight","0-28 days":"0-28 days","0-7 days":"0-7 days","cardiovascular disease":"cardiovascular disease","cancer":"cancer","diabetes":"diabetes","chronic respiratory disease":"chronic respiratory disease","any contraceptive method":"any contraceptive method","modern contraceptive methods":"modern  contraceptive methods","infectious and parasitic diseases":"infectious and parasitic diseases","physicians":"physicians","paramedical personnel":"paramedical personnel","junior medical personnel":"junior medical personnel","electricity":"electricity","proportion of schools connected to the Internet":"proportion of schools connected to the Internet","number of teachers per computer":"number of teachers per computer","water supply":"water supply","sewerage":"sewerage","primary":"primary","lower secondary":"lower secondary","high":"high","secondary":"secondary","preliminary vocational":"preliminary vocational","middle vocational":"middle vocational","bachelor":"bachelor","master":"master","pre-specialized (vocational) education":"pre-specialized (vocational) education","specialized secondary education":"specialized secondary education","specialized high education, first stage (bachelor's degree)":"specialized high education, first stage (bachelor's degree)","post-graduate education, second stage (master's degree)":"post-graduate education, second stage (master's degree)","physical violence":"physical violence","sexual violence":"sexual violence","alone":"alone","jointly with someone else":"jointly with someone else","alone and jointly with someone else":"alone and jointly with someone else","national parliaments":"national parliaments","local governments":"local governments","before age 15":"before age 15","before age 18":"before age 18","domestic material consumption":"domestic material consumption","domestic material consumption per capita":"domestic material consumption per capita","domestic material consumption per GDP":"domestic material consumption per GDP","passenger volume":"passenger volume","railway transport":"railway transport","road transport":"road transport","of which  passenger taxi":"of which  passenger taxi","air transport":"air transport","electricity transport":"electricity transport","freight volumes":"freight volumes","pipelines":"pipelines","growth rates of household expenditure or income per capita among the bottom 40 per cent of the population":"growth rates of household expenditure or income per capita among the bottom 40 per cent of the population","growth rates of household expenditure or income per capita among the total population":"growth rates of household expenditure or income per capita among the total population","high plant species registered in the Red Book of RA":"high plant species registered in the Red Book of RA","included in the specially protected natural areas":"included in the specially protected natural areas","registered in the Red Book of RA":"registered in the Red Book of RA","tax incomes and duties":"tax incomes and duties","other incomes":"other incomes","official grants":"official grants","equal to or greater than 256 kbit/s and less than 2 Mbit/s":"equal to or greater than 256 kbit/s and less than 2 Mbit/s","equal to or greater than 2 Mbit/s and less than 10 Mbit/s":"equal to or greater than 2 Mbit/s and less than 10 Mbit/s","equal to or greater than 10 Mbit/s":"equal to or greater than 10 Mbit/s","have conducted at least one population and housing census in the last 10 years":"have conducted at least one population and housing census in the last 10 years","have achieved 100 per cent birth registration":"have achieved 100 per cent birth registration","have achieved 80 per cent death registration":"have achieved 80 per cent death registration","per capita":"per capita","proportion of GDP":"proportion of GDP","1,000 ha":"1,000 ha","per 100,000 live births":"per 100,000 live births","per 1,000 life births":"per 1,000 life births","per 1,000 population":"per 1,000 population","per 100,000 population":"per 100,000 population","case":"case","person":"person","liter":"liter","per 1,000 women":"per 1,000 women","per 10,000 population":"per 10,000 population","unit":"unit","yes=1, no=0":"yes=1, no=0","mln. dram":"mln. dram","dram":"dram","1,000 people":"1,000 people","1,000 tons":"1,000 tons","kg/mln. dram":"kg/mln. dram","per million population":"per million population","mln. USD":"mln. USD","kg per capita":"kg per capita","mole - H - ion/liter":"mole - H - ion/liter","USD":"USD"};</script>
 
@@ -286,8 +305,11 @@ var translations = {
   
 </ol>
 
+
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
+      
+
       <div id="page-content">
   
 
@@ -298,12 +320,17 @@ var translations = {
 
   <div class="row">
     <div class="col-xs-12">
-      <h2>Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities</h2>
+      <h2>global_indicators.10-2-1.title</h2>
     </div>
   </div>
 
+  
+  
+
+  
+
   <div class="row" id="indicatorData" data-indicatorid='indicator_10-2-1' data-id="10-2-1" data-country=""
-  data-charttitle="Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities" data-measurementunit="" data-datasource=""
+  data-charttitle="global_indicators.10-2-1.title" data-measurementunit="" data-datasource=""
   data-geographicalarea="" data-footnote="" data-showdata="false" data-graphtype="line"
   data-geocoderegex="" data-showmap="" data-startvalues="">
     
@@ -379,6 +406,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -391,6 +419,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -403,6 +432,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -415,6 +445,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -427,6 +458,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -439,6 +471,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -451,6 +484,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -574,7 +608,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator name </th>
         <td>
           
-            Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities
+            <p>global_indicators.10-2-1.title</p>
+
           
         </td>
         </tr>
@@ -586,7 +621,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator number </th>
         <td>
           
-            10.2.1
+            <p>10.2.1</p>
+
           
         </td>
         </tr>
@@ -598,7 +634,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Target name </th>
         <td>
           
-            By 2030, empower and promote the social, economic and political inclusion of all, irrespective of age, sex, disability, race, ethnicity, origin, religion or economic or other status
+            <p>global_targets.10-2.title</p>
+
           
         </td>
         </tr>
@@ -610,7 +647,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Target number </th>
         <td>
           
-            10.2
+            <p>10.2</p>
+
           
         </td>
         </tr>
@@ -622,7 +660,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Global indicator description </th>
         <td>
           
-            This indicator is a measure of relative income poverty at the national level. It measures how far individuals are from the median standard of living, approximating a measure of social exclusion. Persons living in relative poverty often experience many other forms of social and economic disadvantage through unemployment, poor housing, inadequate health care and barriers in accessing education and economic, social, political and cultural activities, which can result from social stigmatisation.
+            <p>This indicator is a measure of relative income poverty at the national level. It measures how far individuals are from the median standard of living, approximating a measure of social exclusion. Persons living in relative poverty often experience many other forms of social and economic disadvantage through unemployment, poor housing, inadequate health care and barriers in accessing education and economic, social, political and cultural activities, which can result from social stigmatisation.</p>
+
           
         </td>
         </tr>
@@ -634,7 +673,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN designated tier </th>
         <td>
           
-            3
+            <p>3</p>
+
           
         </td>
         </tr>
@@ -646,7 +686,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN custodian agency </th>
         <td>
           
-            United Nations Children's Fund (UNICEF) World Bank (WB)
+            <p>United Nations Children’s Fund (UNICEF) World Bank (WB)</p>
+
           
         </td>
         </tr>
@@ -822,7 +863,6 @@ data-event-label="Change to Sources tab"
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
@@ -832,7 +872,9 @@ data-event-label="Change to Sources tab"
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/sdg-site-armenia/assets/js/sdg.js?v=20190914001040'></script><script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src='/sdg-site-armenia/assets/js/sdg.js?v=20190914233244'></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -868,7 +910,7 @@ $(function() {
           view  = new indicatorView(model, {
             rootElement: '#indicatorData',
             legendElement: '#plotLegend',
-            maxChartHeight: 600,
+            maxChartHeight: 420,
             tableColumnDefs: [
               { maxCharCount: 25 }, // nowrap
               { maxCharCount: 35, width: 200 },
