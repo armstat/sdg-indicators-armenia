@@ -26,56 +26,56 @@
         },{
           "id": "1-3-1-a",
           "title": "Доля зарегистрированных людей с инвалидносью в общей численности населения на конец года",
-          "description": "",
+          "description": "meta.description-1-3-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-a",
           "status": "complete"
         },{
           "id": "1-3-1-b",
           "title": "Дети с инвалидностью от болезней (в возрасте 0-17 лет)",
-          "description": "",
+          "description": "meta.description-1-3-1-b",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-b",
           "status": "complete"
         },{
           "id": "1-3-1-c",
           "title": "Доля пенсионеров в общей численности населения на конец года",
-          "description": "",
+          "description": "meta.description-1-3-1-c",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-c",
           "status": "complete"
         },{
           "id": "1-3-1-d",
           "title": "Соотношение пожилых пенсионеров. Соотношение пенсионеров по возрасту и пенсионного возраста, установленных законом, и по возрасту населения",
-          "description": "",
+          "description": "meta.description-1-3-1-d",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-d",
           "status": "complete"
         },{
           "id": "1-3-1-e",
           "title": "Доля семей, получающих семейные пособия от общего числа домохозяйств",
-          "description": "",
+          "description": "meta.description-1-3-1-e",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-e",
           "status": "complete"
         },{
           "id": "1-3-1-f",
           "title": "Доля семей, получающих социальные пособия от общего числа домохозяйств",
-          "description": "",
+          "description": "meta.description-1-3-1-f",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-f",
           "status": "complete"
         },{
           "id": "1-3-1-g",
           "title": "Доля получателей пенсии по старости, инвалидности и в случае потери кормильца от общей численности населения на конец года",
-          "description": "",
+          "description": "meta.description-1-3-1-g",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-g",
           "status": "complete"
         },{
           "id": "1-3-1-h",
           "title": "Дети в детских домах (в возрасте 0-17 лет) на конец года",
-          "description": "",
+          "description": "meta.description-1-3-1-h",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-h",
           "status": "complete"
@@ -89,28 +89,28 @@
         },{
           "id": "1-3-1-j",
           "title": "Дети-инвалиды, проживающие в детских домах (в возрасте 0–17 лет) на конец года",
-          "description": "",
+          "description": "meta.description-1-3-1-j",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-j",
           "status": "complete"
         },{
           "id": "1-3-1-ja",
           "title": "Усыновленные дети (в возрасте 0-17 лет)",
-          "description": "",
+          "description": "meta.description-1-3-1-ja",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-ja",
           "status": "complete"
         },{
           "id": "1-3-1-jb",
           "title": "Усыновленные дети по социальным группам (в возрасте 0-17 лет)",
-          "description": "",
+          "description": "meta.description-1-3-1-jb",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-jb",
           "status": "complete"
         },{
           "id": "1-3-1-jc",
           "title": "Количество бенефициаров, получающих пособия по материнству, предоставленные неработающим женщинам на конец года",
-          "description": "",
+          "description": "meta.description-1-3-1-jc",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/1-3-1-jc",
           "status": "complete"
@@ -318,7 +318,7 @@
       "indicators": [{
           "id": "3-1-1-a",
           "title": "Коэффициент материнской смертности (средний трехлетний показатель)",
-          "description": "",
+          "description": "meta.description-3-1-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-1-1-a",
           "status": "complete"
@@ -346,7 +346,7 @@
         },{
           "id": "3-2-2-a",
           "title": "Коэффициент младенческои смертности на 1 000 живорождений",
-          "description": "",
+          "description": "meta.description-3-2-2-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-2-2-a",
           "status": "complete"
@@ -451,7 +451,7 @@
         },{
           "id": "3-3-5-b",
           "title": "Случаи смерти от лейшманиоза",
-          "description": "",
+          "description": "meta.description-3-3-5-b",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-3-5-b",
           "status": "complete"
@@ -479,7 +479,7 @@
         },{
           "id": "3-5-1-a",
           "title": "Количество пациентов, страдающих наркоманией",
-          "description": "",
+          "description": "meta.description-3-5-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-5-1-a",
           "status": "complete"
@@ -521,7 +521,7 @@
         },{
           "id": "3-7-2-a",
           "title": "Коэффициент рождаемости среди подростков (в возрасте 15-17 лет) на 1000 женщин в этой возрастной группе",
-          "description": "",
+          "description": "meta.description-3-7-2-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/3-7-2-a",
           "status": "complete"
@@ -688,14 +688,14 @@
         },{
           "id": "4-1-1b",
           "title": "Доля детей в конце начальной школы, достигающих, по крайней мере, минимального уровня владения (i) чтением и (ii) математикой",
-          "description": "",
+          "description": "meta.description-4-1-1-b",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-1-1b",
           "status": "complete"
         },{
           "id": "4-1-1c",
           "title": "Доля детей в конце младших классов средней школы, достигших, по крайней мере, минимального уровня владения (i) чтением и (ii) математикой",
-          "description": "",
+          "description": "meta.description-4-1-1-c",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-1-1c",
           "status": "complete"
@@ -709,7 +709,7 @@
         },{
           "id": "4-2-2-a",
           "title": "Валовая численность детей в возрасте от 3-5 лет в дошкольном образовании",
-          "description": "",
+          "description": "meta.description-4-2-2-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-2-2-a",
           "status": "complete"
@@ -723,7 +723,7 @@
         },{
           "id": "4-3-1-a",
           "title": "Валовой коэффициент охвата образованием в общем образовании",
-          "description": "",
+          "description": "meta.description-4-3-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-3-1-a",
           "status": "complete"
@@ -737,7 +737,7 @@
         },{
           "id": "4-4-1-a",
           "title": "Число учеников на компьютер в общеобразовательных школах.",
-          "description": "",
+          "description": "meta.description-4-4-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-4-1-a",
           "status": "complete"
@@ -751,7 +751,7 @@
         },{
           "id": "4-5-1-a",
           "title": "Индекс гендерного паритета",
-          "description": "",
+          "description": "meta.description-4-5-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-5-1-a",
           "status": "complete"
@@ -765,7 +765,7 @@
         },{
           "id": "4-6-1-a",
           "title": "Уровень грамотности населения в возрасте от 10-24 лет",
-          "description": "",
+          "description": "meta.description-4-6-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-6-1-a",
           "status": "complete"
@@ -800,7 +800,7 @@
         },{
           "id": "4-c-1-a",
           "title": "Доля подготовленных учителей",
-          "description": "",
+          "description": "meta.description-4-c-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/4-c-1-a",
           "status": "complete"
@@ -1001,7 +1001,7 @@
         },{
           "id": "6-3-1-a",
           "title": "Доля недостаточно очищенных сточных вод в общем объеме образующихся сточных вод",
-          "description": "",
+          "description": "meta.description-6-3-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/6-3-1-a",
           "status": "complete"
@@ -1756,7 +1756,7 @@
         },{
           "id": "14-3-1-a",
           "title": "Средняя кислотность (pH) озера Севан, измеренная на согласованном наборе репрезентативных станций отбора проб",
-          "description": "",
+          "description": "meta.description-14-3-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/14-3-1-a",
           "status": "complete"
@@ -1777,7 +1777,7 @@
         },{
           "id": "14-5-1-a",
           "title": "Охват охраняемых акваторий по отношению к озерам и водохранилищам.",
-          "description": "",
+          "description": "meta.description-14-5-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/14-5-1-a",
           "status": "complete"
@@ -1846,7 +1846,7 @@
         },{
           "id": "15-1-2-a",
           "title": "global_indicators.15-1-2-a-title",
-          "description": "",
+          "description": "meta.description-15-1-2-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/15-1-2-a",
           "status": "complete"
@@ -1867,7 +1867,7 @@
         },{
           "id": "15-3-1-a",
           "title": "Доля земель, нуждающиеся в улучшении, по отношению к общей площади",
-          "description": "",
+          "description": "meta.description-15-3-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/15-3-1-a",
           "status": "complete"
@@ -1971,7 +1971,7 @@
       "indicators": [{
           "id": "16-1-1-a",
           "title": "Количество убийств на 100 000 населения",
-          "description": "",
+          "description": "meta.description-16-1-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/16-1-1-a",
           "status": "complete"
@@ -2048,7 +2048,7 @@
         },{
           "id": "16-3-2",
           "title": "Доля лиц, задерживаемых до вынесения приговора,в общей численности лиц, содержащихся под стражей",
-          "description": "",
+          "description": "meta.description-16-3-2",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/16-3-2",
           "status": "complete"
@@ -2145,7 +2145,7 @@
       "indicators": [{
           "id": "17-1-1-a",
           "title": "Общие доходы центрального правительства как доля ВВП",
-          "description": "",
+          "description": "meta.description-17-1-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/17-1-1-a",
           "status": "complete"
@@ -2285,7 +2285,7 @@
         },{
           "id": "17-4-1-a",
           "title": "Обслуживание государственного внешнего долга в процентах к экспорту товаров и услуг",
-          "description": "",
+          "description": "meta.description-17-4-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/ru/17-4-1-a",
           "status": "complete"

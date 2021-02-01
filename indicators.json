@@ -26,56 +26,56 @@
         },{
           "id": "1-3-1-a",
           "title": "Proportion of registered disabled people to the total number of population at the end of the year",
-          "description": "",
+          "description": "meta.description-1-3-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/1-3-1-a",
           "status": "complete"
         },{
           "id": "1-3-1-b",
           "title": "Children with disabilities from diseases (aged 0-17 years)",
-          "description": "",
+          "description": "meta.description-1-3-1-b",
           "keywords": "",
           "href": "/sdg-site-armenia/1-3-1-b",
           "status": "complete"
         },{
           "id": "1-3-1-c",
           "title": "Proportion of pensioners to the total number of population at the end of the year",
-          "description": "",
+          "description": "meta.description-1-3-1-c",
           "keywords": "",
           "href": "/sdg-site-armenia/1-3-1-c",
           "status": "complete"
         },{
           "id": "1-3-1-d",
           "title": "Ratio of elderly pensioners. Ratio of age pensioners and the retirement age stipulated by law and aged population",
-          "description": "",
+          "description": "meta.description-1-3-1-d",
           "keywords": "",
           "href": "/sdg-site-armenia/1-3-1-d",
           "status": "complete"
         },{
           "id": "1-3-1-e",
           "title": "Proportion of families receiving family benefits to households",
-          "description": "",
+          "description": "meta.description-1-3-1-e",
           "keywords": "",
           "href": "/sdg-site-armenia/1-3-1-e",
           "status": "complete"
         },{
           "id": "1-3-1-f",
           "title": "Proportion of families receiving social benefits to households",
-          "description": "",
+          "description": "meta.description-1-3-1-f",
           "keywords": "",
           "href": "/sdg-site-armenia/1-3-1-f",
           "status": "complete"
         },{
           "id": "1-3-1-g",
           "title": "Proportion of beneficiaries of old age, disability and in case of losing a breadwinner to the total number of population at the end of the year",
-          "description": "",
+          "description": "meta.description-1-3-1-g",
           "keywords": "",
           "href": "/sdg-site-armenia/1-3-1-g",
           "status": "complete"
         },{
           "id": "1-3-1-h",
           "title": "Children of orphans (aged 0-17 years) at the end of the year",
-          "description": "",
+          "description": "meta.description-1-3-1-h",
           "keywords": "",
           "href": "/sdg-site-armenia/1-3-1-h",
           "status": "complete"
@@ -89,28 +89,28 @@
         },{
           "id": "1-3-1-j",
           "title": "Children with disabilities living in orphanages (aged 0-17 years) at the end of the year",
-          "description": "",
+          "description": "meta.description-1-3-1-j",
           "keywords": "",
           "href": "/sdg-site-armenia/1-3-1-j",
           "status": "complete"
         },{
           "id": "1-3-1-ja",
           "title": "Adopted children (aged 0-17 years)",
-          "description": "",
+          "description": "meta.description-1-3-1-ja",
           "keywords": "",
           "href": "/sdg-site-armenia/1-3-1-ja",
           "status": "complete"
         },{
           "id": "1-3-1-jb",
           "title": "Adopted children by social groups (aged 0-17 years)",
-          "description": "",
+          "description": "meta.description-1-3-1-jb",
           "keywords": "",
           "href": "/sdg-site-armenia/1-3-1-jb",
           "status": "complete"
         },{
           "id": "1-3-1-jc",
           "title": "Number of beneficiaries receiving maternity benefits granted to non-employed person at the end of the year",
-          "description": "",
+          "description": "meta.description-1-3-1-jc",
           "keywords": "",
           "href": "/sdg-site-armenia/1-3-1-jc",
           "status": "complete"
@@ -318,7 +318,7 @@
       "indicators": [{
           "id": "3-1-1-a",
           "title": "Maternal mortality ratio (average three-year indicator)",
-          "description": "",
+          "description": "meta.description-3-1-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/3-1-1-a",
           "status": "complete"
@@ -346,7 +346,7 @@
         },{
           "id": "3-2-2-a",
           "title": "Infant mortality rate",
-          "description": "",
+          "description": "meta.description-3-2-2-a",
           "keywords": "",
           "href": "/sdg-site-armenia/3-2-2-a",
           "status": "complete"
@@ -451,7 +451,7 @@
         },{
           "id": "3-3-5-b",
           "title": "Case of death from leishmaniosis",
-          "description": "",
+          "description": "meta.description-3-3-5-b",
           "keywords": "",
           "href": "/sdg-site-armenia/3-3-5-b",
           "status": "complete"
@@ -479,7 +479,7 @@
         },{
           "id": "3-5-1-a",
           "title": "The number of patients suffering from drug addiction",
-          "description": "",
+          "description": "meta.description-3-5-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/3-5-1-a",
           "status": "complete"
@@ -521,7 +521,7 @@
         },{
           "id": "3-7-2-a",
           "title": "Adolescent birth rate (aged 15-17 years) per 1,000 women in that age group",
-          "description": "",
+          "description": "meta.description-3-7-2-a",
           "keywords": "",
           "href": "/sdg-site-armenia/3-7-2-a",
           "status": "complete"
@@ -688,14 +688,14 @@
         },{
           "id": "4-1-1b",
           "title": "Proportion of children at the end of primary achieving at least a minimum proficiency level in  (i) reading and (ii) mathematics",
-          "description": "",
+          "description": "meta.description-4-1-1-b",
           "keywords": "",
           "href": "/sdg-site-armenia/4-1-1b",
           "status": "complete"
         },{
           "id": "4-1-1c",
           "title": "Proportion of children at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics",
-          "description": "",
+          "description": "meta.description-4-1-1-c",
           "keywords": "",
           "href": "/sdg-site-armenia/4-1-1c",
           "status": "complete"
@@ -709,7 +709,7 @@
         },{
           "id": "4-2-2-a",
           "title": "Gross enrolment  of children 3 -5 years of age in pre-primary education",
-          "description": "",
+          "description": "meta.description-4-2-2-a",
           "keywords": "",
           "href": "/sdg-site-armenia/4-2-2-a",
           "status": "complete"
@@ -723,7 +723,7 @@
         },{
           "id": "4-3-1-a",
           "title": "Gross Enrollment Ration in general educatioin",
-          "description": "",
+          "description": "meta.description-4-3-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/4-3-1-a",
           "status": "complete"
@@ -737,7 +737,7 @@
         },{
           "id": "4-4-1-a",
           "title": "Number of pupils per computer in general education schools",
-          "description": "",
+          "description": "meta.description-4-4-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/4-4-1-a",
           "status": "complete"
@@ -751,7 +751,7 @@
         },{
           "id": "4-5-1-a",
           "title": "Gender parity index",
-          "description": "",
+          "description": "meta.description-4-5-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/4-5-1-a",
           "status": "complete"
@@ -765,7 +765,7 @@
         },{
           "id": "4-6-1-a",
           "title": "Literacy rate among population aged from 10-24  years old",
-          "description": "",
+          "description": "meta.description-4-6-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/4-6-1-a",
           "status": "complete"
@@ -800,7 +800,7 @@
         },{
           "id": "4-c-1-a",
           "title": "Proportion of trained teachers",
-          "description": "",
+          "description": "meta.description-4-c-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/4-c-1-a",
           "status": "complete"
@@ -1001,7 +1001,7 @@
         },{
           "id": "6-3-1-a",
           "title": "Proportion of insufficiently treated wastewater in the total volume of generated wastewater",
-          "description": "",
+          "description": "meta.description-6-3-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/6-3-1-a",
           "status": "complete"
@@ -1756,7 +1756,7 @@
         },{
           "id": "14-3-1-a",
           "title": "Average Lake Sevan acidity (pH) measured at agreed suite of representative sampling stations",
-          "description": "",
+          "description": "meta.description-14-3-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/14-3-1-a",
           "status": "complete"
@@ -1777,7 +1777,7 @@
         },{
           "id": "14-5-1-a",
           "title": "Coverage of protected water areas in relation to lakes and reservoirs",
-          "description": "",
+          "description": "meta.description-14-5-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/14-5-1-a",
           "status": "complete"
@@ -1846,7 +1846,7 @@
         },{
           "id": "15-1-2-a",
           "title": "global_indicators.15-1-2-a-title",
-          "description": "",
+          "description": "meta.description-15-1-2-a",
           "keywords": "",
           "href": "/sdg-site-armenia/15-1-2-a",
           "status": "complete"
@@ -1867,7 +1867,7 @@
         },{
           "id": "15-3-1-a",
           "title": "Proportion of lands in need of improvement over total land area",
-          "description": "",
+          "description": "meta.description-15-3-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/15-3-1-a",
           "status": "complete"
@@ -1971,7 +1971,7 @@
       "indicators": [{
           "id": "16-1-1-a",
           "title": "Number of homicide cases per 100,000 population",
-          "description": "",
+          "description": "meta.description-16-1-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/16-1-1-a",
           "status": "complete"
@@ -2048,7 +2048,7 @@
         },{
           "id": "16-3-2",
           "title": "Unsentenced detainees as a proportion of overall prison population",
-          "description": "",
+          "description": "meta.description-16-3-2",
           "keywords": "",
           "href": "/sdg-site-armenia/16-3-2",
           "status": "complete"
@@ -2145,7 +2145,7 @@
       "indicators": [{
           "id": "17-1-1-a",
           "title": "Total central government revenue as a proportion of GDP",
-          "description": "",
+          "description": "meta.description-17-1-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/17-1-1-a",
           "status": "complete"
@@ -2285,7 +2285,7 @@
         },{
           "id": "17-4-1-a",
           "title": "External public debt service as a proportion of exports of goods and services",
-          "description": "",
+          "description": "meta.description-17-4-1-a",
           "keywords": "",
           "href": "/sdg-site-armenia/17-4-1-a",
           "status": "complete"
