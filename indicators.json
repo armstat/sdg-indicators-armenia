@@ -24,12 +24,12 @@
           "href": "/sdg-site-armenia/1-2-2",
           "status": "complete"
         },{
-          "id": "1-3-1",
-          "title": "Proportion of population covered by social protection floors/systems, by sex, distinguishing children, unemployed persons, older persons, persons with disabilities, pregnant women, newborns, work-injury victims and the poor and the vulnerable",
-          "description": "",
+          "id": "1-3-1-a",
+          "title": "1-3-1-a",
+          "description": "meta.description-1-3-1-a",
           "keywords": "",
-          "href": "/sdg-site-armenia/1-3-1",
-          "status": "notstarted"
+          "href": "/sdg-site-armenia/1-3-1-a",
+          "status": "complete"
         },{
           "id": "1-3-1-b",
           "title": "Children with disabilities from diseases (aged 0-17 years)",
