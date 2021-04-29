@@ -141,7 +141,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/sdg-site-armenia/assets/css/default.css?v=20210429000838">
+        <link rel="stylesheet" href="/sdg-site-armenia/assets/css/default.css?v=20210429125932">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -149,20 +149,20 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-site-armenia/assets/css/custom.css?v=20210429000838"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/sdg-site-armenia/assets/css/custom.css?v=20210429125932"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-am layout-indicator">
 <!-- <div class="container"> -->
 
-<script>translations['header'] = {"alpha":"Ալֆա","default_contrast":"լռելյայն հակադրություն","disable_high_contrast":"Անջատեք բարձր հակադրություն","disclaimer":"Սա մշակման վեբ կայք է: Մենք ողջունում ենք ձեր <a href=\"mailto:%email_address\"> հետադարձ կապը  ","enable_high_contrast":"Միացնել բարձր հակադրություն","high_contrast":"բարձր հակադրություն","skip_link":"Անցեք հիմնական բովանդակությանը ","tag_line":"17 նպատակներ մեր աշխարհը փոխակերպելու համար"};</script>
+<script>translations['header'] = {"alpha":"Ալֆա","default_contrast":"լռելյայն հակադրություն","disable_high_contrast":"Անջատեք բարձր հակադրություն","disclaimer":"Սա մշակման վեբ կայք է: Մենք ողջունում ենք ձեր <a href=\"mailto:%email_address\"> հետադարձ կապը","enable_high_contrast":"Միացնել բարձր հակադրություն","high_contrast":"բարձր հակադրություն","skip_link":"Անցեք հիմնական բովանդակությանը","tag_line":"17 նպատակներ մեր աշխարհը փոխակերպելու համար","toggle_menu":"Ընտրացանկի փոխարկում Կտտացրեք ընտրացանկը ընդլայնելու կամ փլուզելու համար:","toggle_search":"Որոնման փոփոխություն: Սեղմեք ՝ որոնման տողն ընդլայնելու կամ փլուզելու համար:"};</script>
 
-<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Անցեք հիմնական բովանդակությանը </a>
+<a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Անցեք հիմնական բովանդակությանը</a>
 <div id="disclaimer">
   <div class="container">
   <div class="alert alert-danger" role="alert">
     <strong class="phase-tag">Ալֆա</strong>
-    Սա մշակման վեբ կայք է: Մենք ողջունում ենք ձեր <a href="mailto:test@example.com"> հետադարձ կապը  
+    Սա մշակման վեբ կայք է: Մենք ողջունում ենք ձեր <a href="mailto:test@example.com"> հետադարձ կապը
   </div>
 </div>
 
@@ -201,7 +201,7 @@ var translations = {
       </ul>
 
       <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
-            <a href="/sdg-site-armenia/am/reporting-status">Հաշվետվության կարգավիճակը </a>
+            <a href="/sdg-site-armenia/am/reporting-status">Հաշվետվության կարգավիճակը</a>
           </li><li class="nav-link ">
             <a href="/sdg-site-armenia/am/about">Վերաբերյալ</a>
           </li><li class="nav-link ">
@@ -242,7 +242,7 @@ var translations = {
       <div class="variable-options">
         <div>
           <button data-type="select">Ընտրել ամբողջը</button>
-          <button data-type="clear">Մաքրել ամեն ինչ </button>
+          <button data-type="clear">Մաքրել ամեն ինչ</button>
         </div>
         <% _.each(seriesItem.values, function(item) { %>
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=translations.t(item.value)%></label>
@@ -250,7 +250,7 @@ var translations = {
       </div>
 
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %>
-        <div class="variable-hint">Հասանելի է, երբ ընտրված է դաշտը '<%= translations.t(_.findWhere(edges, { To: seriesItem.field }).From) %>' 
+        <div class="variable-hint">Հասանելի է, երբ ընտրված է դաշտը '<%= translations.t(_.findWhere(edges, { To: seriesItem.field }).From) %>'
         </div>
         <div class="no-data-hint">
           Վերը նշված ֆիլտրերի պատճառով ընտրանք չկա
@@ -271,7 +271,7 @@ var translations = {
   <% } %>
 </script>
 
-<script>translations['indicator'] = {"chart":"Գծապատկեր","clear_all":"Մաքրել ամեն ինչ ","clear_selections":"Մաքրել նշվածները ","dataset_size_warning":"Տվյալները չափազանց շատ են գծապատկերում ցուցադրելու համար: Նրանցից ոչ բոլորը կցուցադրվեն, քանի դեռ չեք հանել որոշ նշվածները:","download_chart":"Ներբեռնել CSV գծապատկեր","download_chart_image":"Ներբեռնեք գծապատկերի պատկերը","download_chart_image_title":"Ներբեռնեք աղյուսակը որպես պատկեր","download_csv":"Ներբեռնել CSV","download_csv_title":"Ներբեռնել որպես CSV","download_headline":"Ներբեռնել վերնագիրը որպես CSV","download_headline_title":"Ներբեռնել վերնագրի տվյալները որպես CSV","download_source":"Ներբեռնել աղբյուրը CSV","download_source_title":"Ներբեռնել աղբյուրի տվյալները, որպես CSV","download_table":"Ներբեռնել CSV աղյուսակը","edit":"Խմբագրել","edit_data":"Խմբագրել տվյալները","edit_metadata":"Խմբագրել մետատվյալները","footnote":"Ծանոթագրություն","geographical_area":"Աշխարհագրական դիրք","global_metadata":"Գլոբալ մետատվյալներ","global_metadata_blurb":"Այս աղյուսակը տեղեկատվություն է տրամադրում ՄԱԿ-ի վիճակագրական կոմիտեի սահմանած ԿԶՆ ցուցանիշների մետատվյալի մասին <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> ","legend_help":"Սեղմեք նկարագրությանը գծապատկերից անհատական գծերը հեռացնելու համար:","loading_map":"Քարտեզը բեռնվում է։","map":"Քարտեզ","national_metadata":"Ազգային մետատվյալներ","national_metadata_blurb":"Այս աղյուսակը տրամադրում է երկրի_անվանում վիճակագրությունում առկա համապատասխան գլոբալ ԿԶՆ ցուցանիշին ամենամոտ մետատվյալներ գործող ցուցանիշի վերաբերյալ։ Խնդրում ենք նկատի ունենալ, որ նույնիսկ այն դեպքում, երբ գլոբալ ԿԶՆ ցուցանիշը ամբողջությամբ հասանելի է երկրին_համապատասխան վիճակագրության մեջ, այս աղյուսակը պետք է ծառայի ազգային մեթոդաբանության և այլ երկրին_համապատասխան մետատվյալների վերաբերյալ տեղեկատվության համար:","no_data_hint":"Վերը նշված ֆիլտրերի պատճառով ընտրանք չկա","select_all":"Ընտրել ամբողջը","series_help":"Ընտրել ստորև բերված կատեգորիաները `տվյալների տարբեր ենթախմբերը տեսնելու համար: Ոմանք հասանելի չեն լինի, մինչև չընտրվի առավել բարձր մակարդակը: ","source":"Աղբյուր","sources":"Աղբյուրներ","sub_categories":"Ենթախմբեր","table":"Աղյուսակ","unit_of_measurement":"Չափման  միավոր","units_type":"Միավորների տեսակը","variable_hint":"Հասանելի է, երբ ընտրված է դաշտը '%field' ","view_indicator_list":"Տեսնել այս նպատակի ցուցանիշների ցանկը"};</script>
+<script>translations['indicator'] = {"annotation_2030_target":"2030 թիրախ","announce_data_added":"Գծապատկերն ու աղյուսակը թարմացվել են ՝ տվյալների ներառման համար:","announce_data_not_available":"Գծապատկերն ու աղյուսակը տվյալներ չեն ցույց տալիս:","announce_data_removed":"Գծապատկերն ու աղյուսակը թարմացվել են ՝ տվյալները բացառելու համար:","chart":"Գծապատկեր","chart_annotation":"Գծապատկերային ծանոթագրություն","clear_all":"Մաքրել ամեն ինչ","clear_selections":"Մաքրել նշվածները","data_keyboard_navigation":"Սեղմեք enter ՝ ձախ և աջ սլաքների ստեղներով տվյալների կետերը թերթելու համար:","data_not_available":"Այս տվյալները մատչելի չեն: Խնդրում ենք ընտրել այլընտրանքային տվյալներ ցուցադրելու համար:","data_tabular_alternative":"Աղյուսակային տվյալների այլընտրանքի համար տե՛ս Աղյուսակ ներդիր:","dataset_size_warning":"Տվյալները չափազանց շատ են գծապատկերում ցուցադրելու համար: Նրանցից ոչ բոլորը կցուցադրվեն, քանի դեռ չեք հանել որոշ նշվածները:","download_chart":"Ներբեռնել CSV գծապատկեր","download_chart_image":"Ներբեռնեք գծապատկերի պատկերը","download_chart_image_title":"Ներբեռնեք աղյուսակը որպես պատկեր","download_csv":"Ներբեռնել CSV","download_csv_title":"Ներբեռնել որպես CSV","download_geojson":"Ներբեռնել GeoJSON","download_geojson_title":"Ներբեռնել որպես GeoJSON","download_headline":"Ներբեռնել վերնագիրը որպես CSV","download_headline_title":"Ներբեռնել վերնագրի տվյալները որպես CSV","download_source":"Ներբեռնել աղբյուրը CSV","download_source_sdmx":"Ներբեռնել աղբյուրը SDMX","download_source_sdmx_title":"Ներբեռնել աղբյուրի տվյալները, որպես SDMX","download_source_title":"Ներբեռնել աղբյուրի տվյալները, որպես CSV","download_table":"Ներբեռնել CSV աղյուսակը","edit":"Խմբագրել","edit_configuration":"Խմբագրել կազմաձևը","edit_data":"Խմբագրել տվյալները","edit_metadata":"Խմբագրել մեթատվյալները","footnote":"Ծանոթագրություն","geographical_area":"Աշխարհագրական դիրք","global_metadata":"Գլոբալ մեթատվյալներ","global_metadata_blurb":"Այս աղյուսակը տեղեկատվություն է տրամադրում ՄԱԿ-ի վիճակագրական կոմիտեի սահմանած ԿԶՆ ցուցանիշների մեթատվյալի մասին <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a>","legend_help":"Սեղմեք նկարագրությանը գծապատկերից անհատական գծերը հեռացնելու համար:","loading":"Բեռնում","loading_map":"Քարտեզը բեռնվում է։","map":"Քարտեզ","map_search":"Որոնում","map_search_hide":"Թաքցնել որոնումը","map_search_show":"Showուցադրել որոնումը","map_year_slider":"Տարվա սլայդեր","national_metadata":"Ազգային մեթատվյալներ","national_metadata_blurb":"Այս աղյուսակը տրամադրում է երկրի_անվանում վիճակագրությունում առկա համապատասխան գլոբալ ԿԶՆ ցուցանիշին ամենամոտ մեթատվյալներ գործող ցուցանիշի վերաբերյալ։ Խնդրում ենք նկատի ունենալ, որ նույնիսկ այն դեպքում, երբ գլոբալ ԿԶՆ ցուցանիշը ամբողջությամբ հասանելի է երկրին_համապատասխան վիճակագրության մեջ, այս աղյուսակը պետք է ծառայի ազգային մեթոդաբանության և այլ երկրին_համապատասխան մեթատվյալների վերաբերյալ տեղեկատվության համար:","next":"Հաջորդ ցուցանիշը","no_data_hint":"Վերը նշված ֆիլտրերի պատճառով ընտրանք չկա","plot_legend_description":"Սյուժեի լեգենդ. Գծապատկերում ընդգրկված տողերի ցուցակ","previous":"Նախորդ ցուցանիշը","select_all":"Ընտրել ամբողջը","series":"Սերիան","series_help":"Ընտրել ստորև բերված կատեգորիաները` տվյալների տարբեր ենթախմբերը տեսնելու համար: Ոմանք հասանելի չեն լինի, մինչև չընտրվի առավել բարձր մակարդակը:","source":"Աղբյուր","sources":"Աղբյուրներ","status":"Ուցանիշի կարգավիճակ","sub_categories":"Ենթախմբեր","sub_categories_show":"Showուցադրել ենթակատեգորիաները.","table":"Աղյուսակ","table_column_sort":"Կտտացրեք ՝ ըստ սյունակի տեսակավորելու","tags":"Թեգեր(Tags)","unit":"Միավոր","unit_of_measurement":"Չափման միավոր","units_type":"Միավորների տեսակը","variable_hint":"Հասանելի է, երբ ընտրված է դաշտը '%field'","view_indicator_list":"Տեսնել այս նպատակի ցուցանիշների ցանկը"};</script>
 
 <script>translations['data'] = {"Sex":"Սեռ","Age":"Տարիք","Location":"Տարածք","Employment status":"Զբաղվածության կարգավիճակ","Disaster type":"Աղետի տեսակ","Education type":"Կրթության տեսակ","Transportation type":"Տրանսպորտային տեսակ","Access to services":"Ծառայությունների հասանելիությունը","Category":"Տեսակ","female":"իգական","male":"արական","number":"թվաքանակ","rural":"գյուղ","urban":"քաղաք","total":"ընդամենը","children":"երեխաներ","aged 0-17 years":"0-17 տարեկան","aged 5-11 years":"5-11 տարեկան","aged 12-15 years":"12-15 տարեկան","aged 16-17 years":"16-17 տարեկան","aged 18-39 years":"18-39 տարեկան","aged 40-62 years":"40-62 տարեկան","aged 63 and older":"63 և բարձր տարիքի","aged 65 and older":"65 և բարձր տարիքի","aged 0-16 years":"0-16 տարեկան","aged 17-65 years":"17-65 տարեկան","aged 18-66 years":"18-66 տարեկան","aged 0-4 years":"0-4 տարեկան","aged 5-9 years":"5-9 տարեկան","aged 10-14 years":"10-14 տարեկան","aged 15-19 years":"15-19 տարեկան","aged 20-24 years":"20-24 տարեկան","aged 0-5 years":"0-5 տարեկան","aged 6-17 years":"6-17 տարեկան","aged 18-64 years":"18-64 տարեկան","aged 15 years":"15 տարեկան","aged 51 - 55 years":"51-55 տարեկան","aged 56 - 62 years":"56-62 տարեկան","15-29 age":"15-29 տարեկան","15-19 age":"15-19 տարեկան","20-24 age":"20-24 տարեկան","15-24 age":"15-24 տարեկան","25-29 age":"25-29 տարեկան","15-75 age":"15-75 տարեկան","aged 5-14 years":"5-14 տարեկան","aged 15-24 years":"15-24 տարեկան","aged 25 and older":"25 և բարձր տարիքի","with disabilities":"հաշմանդամությամբ","total to the total number of children with disabilities (aged 0-17 years)":"ընդամենը՝ հաշմանդամություն ունեցող երեխաների (0-17 տարեկան) ընդհանուր թվաքանակից","economically active population":"տնտեսապես ակտիվ բնակչություն","employed":"զբաղվածներ","wage employed":"վարձու աշխատողներ","self-employed":"ինքնազբաղված","other employed":"այլ զբաղվածներ","unemployment":"գործազուրկներ","economically inactive  population":"տնտեսապես ոչ ակտիվ բնակչություն","pensioners":"թոշակառուներ","students":"ուսանողներ","other inactive population":"այլ ոչ ակտիվ բնակչություն","age-related":"տարիքային","on privileged terms":"արտոնյալ պայմաններով","up to 51 years old":"մինչև 51 տարեկան","long-term service":"երկարամյա ծառայության","partially":"մասնակի","disability":"հաշմանդամության","in case of losing a breadwinner":"կերակրողին կորցնելու դեպքում","by other laws":"այլ օրենքներով սահմանված","related to military service":"զինծառայության հետ կապված","old age":"ծերության","up to 1 year old":"մինչև 1 տարեկան","aged 1-6 years":"1-6 տարեկան","aged 7-9 years":"7-9 տարեկան","aged 10-15 years":"10-15 տարեկան","total to the population of respective age":"ընդամենը՝ համապատասխանն տարիքի բնակչությունից","total to children aged 0-17 years with disabilities":"ընդամենը՝ հաշմանդամություն ունեցող 0-17 տարեկան երեխաներից","up to 6 months":"մինչև 6 ամսական","from 6 months to 1 year":"6 ամսականից մինչև 1 տարեկան","aged 1-5 years":"1-5 տարեկան","aged 6-9 years":"6-9 տարեկան","child with two parents":"երկու ծնող ունեցող երեխա","single mother child":"միայնակ մոր երեխա","left without parental care":"մնացել է առանց ծնողական խնամքի","other":"այլ","natural disaster":"տարերային աղետներ","man-made disaster":"տեխնածին աղետներ","social-biological disaster":"սոցիալ-կենսաբանական աղետներ","education":"կրթություն","health":"առողջապահություն","social protection":"սոցիալական պաշտպանություն","arable land":"վարելահողեր","sown areas":"ցանքատարածություններ","perennial plants":"բազմամյա տնկարկներ","wasting":"թերսնուցում","overweight":"հավելյալ քաշ","0-28 days":"0-28 օր","0-7 days":"0-7 օր","cardiovascular disease":"սրտանոթային հիվանդություն","cancer":"քաղցկեղ","diabetes":"շաքարախտ","chronic respiratory disease":"քրոնիկ շնչառական հիվանդություն","any contraceptive method":"ցանկացած հակաբեղմնավորման մեթոդ","modern contraceptive methods":"ժամանակակից հակաբեղմնավորման մեթոդներ","infectious and parasitic diseases":"վարակիչ և մակաբուծական հիվանդություններ","physicians":"բժիշկներ","paramedical personnel":"միջին բժշկական անձնակազմ","junior medical personnel":"կրտսեր բժշկական անձնակազմ","electricity":"էլեկտրականություն","proportion of schools connected to the Internet":"համացանցին միացված դպրոցների համամասնությունը","number of teachers per computer":"ուսուցիչների թվաքանակը մեկ համակարգչի հաշվով","water supply":"ջրամատակարարում","sewerage":"կոյուղի","primary":"տարրական","lower secondary":"հիմնական","high":"ավագ","secondary":"միջնակարգ","preliminary vocational":"նախնական մասնագիտական","middle vocational":"միջին մասնագիտական","bachelor":"բարձրագույն կրթության առաջին աստիճան","master":"բարձրագույն կրթության երկրորդ աստիճան","pre-specialized (vocational) education":"նախնական մասնագիտական (արհեստագործական)","specialized secondary education":"միջին մասնագիտական","specialized high education, first stage (bachelor's degree)":"բարձրագույն կրթության առաջին աստիճան","post-graduate education, second stage (master's degree)":"բարձրագույն կրթության երկրորդ աստիճան","physical violence":"ֆիզիկական բռնություն","sexual violence":"սեռական բռնություն","alone":"միայնակ","jointly with someone else":"մեկ ուրիշի հետ համատեղ","alone and jointly with someone else":"միայնակ և մեկ ուրիշի հետ համատեղ","national parliaments":"ա) ազգային խորհրդարաններ","local governments":"բ) տեղական իշխանությունները","before age 15":"մինչև 15 տարեկան","before age 18":"մինչև 18 տարեկան","domestic material consumption":"նյութական սպառումը","domestic material consumption per capita":"մեկ շնչի հաշվով ներքին նյութական սպառումը","domestic material consumption per GDP":"ՀՆԱ-ի հաշվով ներքին նյութական սպառումը","passenger volume":"ուղևորների ծավալը՝","railway transport":"երկաթուղային տրանսպորտ","road transport":"ավտոմոբիլային տրանսպորտ","of which  passenger taxi":"որից՝ թեթև մարդատար տաքսի","air transport":"օդային տրանսպորտ","electricity transport":"էլեկտրատրանսպորտ","freight volumes":"բեռների ծավալները՝","pipelines":"խողովակաշարային","growth rates of household expenditure or income per capita among the bottom 40 per cent of the population":"տնային տնտեսությունների ծախսերի կամ մեկ շնչին ընկնող եկամտի աճի ցուցանիշները բնակչության ստորին 40 տոկոսի շրջանում","growth rates of household expenditure or income per capita among the total population":"տնային տնտեսությունների ծախսերի կամ մեկ շնչին ընկնող եկամտի աճի ցուցանիշները ամբողջ բնակչության շրջանում","high plant species registered in the Red Book of RA":"ՀՀ Կարմիր գրքում գրանցված բարձրակարգ բուսատեսակներ","included in the specially protected natural areas":"ներառված են բնության հատուկ պահպանվող տարածքներում","registered in the Red Book of RA":"գրանցված ՀՀ Կարմիր գրքում","tax incomes and duties":"հարկային եկամուտներ և տուրքեր","other incomes":"այլ եկամուտներ","official grants":"պաշտոնական դրամաշնորհներ","equal to or greater than 256 kbit/s and less than 2 Mbit/s":"հավասար է կամ գերազանցում է 256 Կբիթ/վրկ արագությունը և պակաս է 2 Մբիթ/վրկ-ից","equal to or greater than 2 Mbit/s and less than 10 Mbit/s":"հավասար է կամ գերազանցում է 2 Մբիթ/վրկ արագությունը և պակաս է 10 Մբիթ/վրկ-ից","equal to or greater than 10 Mbit/s":"հավասար է կամ գերազանցում է  10 Մբիթ/վրկ արագությունը","have conducted at least one population and housing census in the last 10 years":"վերջին 10 տարիների ընթացքում անցկացրել է առնվազն մեկ բնակչության և մեկ տնային մարդահամար,","have achieved 100 per cent birth registration":"հասել է ծնունդների գրանցման 100 տոկոսին","have achieved 80 per cent death registration":"հասել  մահվան դեպքերի գրանցման 80 տոկոսին","per capita":"մեկ շնչի հաշվով","proportion of GDP":"ՀՆԱ-ի համամասնությունը","1,000 ha":"1,000 հա","per 100,000 live births":"100,000 կենդանածնի հաշվով","per 1,000 life births":"1,000 կենդանածնի հաշվով","per 1,000 population":"1,000 բնակչի հաշվով","per 100,000 population":"100,000  բնակչի հաշվով","case":"դեպք","person":"մարդ","liter":"լիտր","per 1,000 women":"1,000 կնոջ հաշվով","per 10,000 population":"10,000 բնակչի հաշվով","unit":"միավոր","yes=1, no=0":"այո=1, ոչ=0","mln. dram":"մլն. դրամ","dram":"դրամ","1,000 people":"1,000 մարդ","1,000 tons":"1,000 տոննա","kg/mln. dram":"կգ/մլն. դրամ","per million population":"մեկ մլն. բնակչի հաշվով","mln USD":"մլն. ԱՄՆ դոլար","kg per capita":"կգ մեկ շնչի հաշվով","mole - H - ion/liter":"մոլ- H - իոն/լիտր","USD":"ԱՄՆ դոլար","1000 USD":"1000 ԱՄՆ դոլար","10% of daily per capita total household consumption":"տնային տնտեսությունների ամենօրյա սպառման 10% - ը (մեկ շնչի հաշվով) (%)","25% of daily per capita total household consumption":"տնային տնտեսությունների ամենօրյա սպառման 25% - ը (մեկ շնչի հաշվով) (%)","Type":"Տեսակ","household access to centralized water supply":"տնային տնտեսությունների հասանելիությունը կենտրոնացված ջրամատակարարմանը","household access to centralized sewerage system":"տնային տնտեսությունների հասանելիությունը կենտրոնացված  ջրահեռացմանը","household access to garbage disposal":"տնային տնտեսությունների հասանելիությունը կենտրոնացված աղբահանությանը  (աղբամուղ և/կամ հավաքվում է բեռնատարով. թափվում է աղբակույտի մեջ)","internet accessibility for household":"ինտերնետային կապի հասանելիությունը տնային տնտեսությանը","internet accessibility for household members":"ինտերնետային կապի հասանելիությունը տնային տնտեսության անդամներին","share of households with electricity supply":"էլեկտրաէներգիա ունեցող տնային տնտեսությունների մասնաբաժինը","garbage disposal":"աղբի հավաքում","landline telephone":"հեռախոս ստացիոնար","electricity supply":"էլեկտրաէներգիայի մատակարարում","postal service":"փոստ","bank services":"բանկերի աշխատանք","irrigation":"ոռոգում","healthcare":"առողջապահություն","public transportation":"հասարակական տրանսպորտ","Services":"Ծառայություններ","disabled":"հաշմանդամներ","proportion of households with primary reliance on clean fuels and technology":"մաքուր վառելիքից և տեխնոլոգիայից առաջնային կախվածություն ունեցող տնային տնտեսությունների","Share of total areas under protection in the total area of the country":"Հատուկ պահպանվող տարածքների ընդհանուր մակերեսը %-ով երկրի տարածքի նկատմամբ","State reserves(Category Ib), quantity":"Պետական արգելոցների (կատեգորիա Ib) ընդհանուր քանակը","Share of State reserves(Category Ib) in the total area of the country":"Պետական արգելոցների (կատեգորիա Ib)  ընդհանուր մակերեսը %-ով երկրի տարածքի նկատմամբ","National parks (Category II ), quantity":"Ազգային պարկերի (կատեգորիա II) ընդհանուր քանակը","Share of National parks (Category II ) in the total area of the country":"Ազգային պարկերի (կատեգորիա II)  ընդհանուր մակերեսը %-ով երկրի տարածքի նկատմամբ","State preserves (Category IV), quantity":"Պետական արգելավայրերի (կատեգորիա IV) ընդհանուր քանակը","Share of State preserves (Category IV) in the total area of the country":"Պետական արգելավայրերի (կատեգորիա IV) ընդհանուր մակերեսը %-ով երկրի տարածքի նկատմամբ","Monuments of Nature(Category III), quantity":"Բնության հուշարձանների(կատեգորիա III) ընդհանուր քանակը","Hazardous waste generated":"Վտանգավոր թափոնների գոյացումը","Waste transmitted to other organizations":"Տրվել է այլ կազմակերպությունների","Treated and destructed by organizations":"Վնասազերծվել և ոչնչացվել են կազմակերպությունների կողմից","Waste used by organizations":"Օգտագործվել են կազմակերպությունների կողմից","Transported to landfills by means of organizations":"Կազմակերպությունների միջոցներով տեղափոխվել են տեղադրման վայրեր","unit macro":"մլն. դրամ, դրամ, %"};</script>
 
@@ -290,7 +290,7 @@ var translations = {
             <span class="hidden-sm hidden-md hidden-lg">Նպատակը 14: </span>Ապահովել օվկիանոսների, ծովերի ու ջրային պաշարների պահպանությունը և կայուն օգտագործումը՝ հանուն կայուն զարգացման
           </a>
         </h1>
-        <h2>Ցուցանիշ 14.1.1: Ծովափնյա ճահճացման և պոլիէթիլենային լողացող աղբի խտության համաթիվը </h2>
+        <h2>Ցուցանիշ 14.1.1: Ծովափնյա ճահճացման և պոլիէթիլենային լողացող աղբի խտության համաթիվը</h2>
       </div>
     </div>
   </div>
@@ -320,7 +320,7 @@ var translations = {
 
   <div class="row">
     <div class="col-xs-12">
-      <h2>Ծովափնյա ճահճացման և պոլիէթիլենային լողացող աղբի խտության համաթիվը </h2>
+      <h2>Ծովափնյա ճահճացման և պոլիէթիլենային լողացող աղբի խտության համաթիվը</h2>
     </div>
   </div>
 
@@ -330,7 +330,7 @@ var translations = {
   
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_14-1-1' data-id="14-1-1" data-country=""
-  data-charttitle="Ծովափնյա ճահճացման և պոլիէթիլենային լողացող աղբի խտության համաթիվը " data-measurementunit="" data-datasource=""
+  data-charttitle="Ծովափնյա ճահճացման և պոլիէթիլենային լողացող աղբի խտության համաթիվը" data-measurementunit="" data-datasource=""
   data-geographicalarea="" data-footnote="" data-showdata="false" data-graphtype="line"
   data-geocoderegex="" data-showmap="" data-startvalues="">
     
@@ -350,14 +350,14 @@ var translations = {
 data-event-category="Tab change"
 data-event-action="Change metadata view"
 data-event-label="Change to National Metadata tab"
->Ազգային մետատվյալներ</a>
+>Ազգային մեթատվյալներ</a>
           </li>
           <li role="presentation" class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#globalmetadata" aria-controls="globalmetadata" role="tab" data-on="click"
 data-event-category="Tab change"
 data-event-action="Change metadata view"
 data-event-label="Change to Global Metadata tab"
->Գլոբալ մետատվյալներ</a>
+>Գլոբալ մեթատվյալներ</a>
           </li>
           <li role="presentation" class="nav-item">
             <a class="nav-link" data-toggle="tab" href="#sources" aria-controls="sources" role="tab" data-on="click"
@@ -383,7 +383,7 @@ data-event-label="Change to Sources tab"
                 <p>
                   
                   
-                  Այս աղյուսակը տրամադրում է երկրի_անվանում վիճակագրությունում առկա համապատասխան գլոբալ ԿԶՆ ցուցանիշին ամենամոտ մետատվյալներ գործող ցուցանիշի վերաբերյալ։ Խնդրում ենք նկատի ունենալ, որ նույնիսկ այն դեպքում, երբ գլոբալ ԿԶՆ ցուցանիշը ամբողջությամբ հասանելի է երկրին_համապատասխան վիճակագրության մեջ, այս աղյուսակը պետք է ծառայի ազգային մեթոդաբանության և այլ երկրին_համապատասխան մետատվյալների վերաբերյալ տեղեկատվության համար:
+                  Այս աղյուսակը տրամադրում է երկրի_անվանում վիճակագրությունում առկա համապատասխան գլոբալ ԿԶՆ ցուցանիշին ամենամոտ մեթատվյալներ գործող ցուցանիշի վերաբերյալ։ Խնդրում ենք նկատի ունենալ, որ նույնիսկ այն դեպքում, երբ գլոբալ ԿԶՆ ցուցանիշը ամբողջությամբ հասանելի է երկրին_համապատասխան վիճակագրության մեջ, այս աղյուսակը պետք է ծառայի ազգային մեթոդաբանության և այլ երկրին_համապատասխան մեթատվյալների վերաբերյալ տեղեկատվության համար:
                 </p>
                 <table class="table table-hover">
   
@@ -417,7 +417,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Ցուցանիշի նկարագիր  </th>
+        <th scope="row">Ցուցանիշի նկարագիր </th>
         <td>
           
             
@@ -430,7 +430,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Աշխարհագրական ընդգրկունություն  </th>
+        <th scope="row">Աշխարհագրական ընդգրկունություն </th>
         <td>
           
             
@@ -443,7 +443,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Չափման միավորը  </th>
+        <th scope="row">Չափման միավորը </th>
         <td>
           
             
@@ -456,7 +456,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Սահմանումներ  </th>
+        <th scope="row">Սահմանումներ </th>
         <td>
           
             
@@ -469,7 +469,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Հաշվարկներ  </th>
+        <th scope="row">Հաշվարկներ </th>
         <td>
           
             
@@ -482,7 +482,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Այլ տեղեկություններ  </th>
+        <th scope="row">Մեկնաբանություններ և սահմանափակումներ </th>
         <td>
           
             
@@ -495,7 +495,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Տվյալները վերջին անգամ թարմացվել են  </th>
+        <th scope="row">Տվյալները վերջին անգամ թարմացվել են </th>
         <td>
           
             
@@ -520,7 +520,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Մետատվյալները վերջին անգան թարմացվել են  </th>
+        <th scope="row">Մետատվյալները վերջին անգան թարմացվել են </th>
         <td>
           
             
@@ -598,7 +598,7 @@ data-event-label="Change to Sources tab"
             <div> <!-- formerly <div class="collapsible expanded"> -->
               <!-- <h3 tabindex='0'>Global Metadata</h3> -->
               <article>
-                <p>Այս աղյուսակը տեղեկատվություն է տրամադրում ՄԱԿ-ի վիճակագրական կոմիտեի սահմանած ԿԶՆ ցուցանիշների մետատվյալի մասին <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> </p>
+                <p>Այս աղյուսակը տեղեկատվություն է տրամադրում ՄԱԿ-ի վիճակագրական կոմիտեի սահմանած ԿԶՆ ցուցանիշների մեթատվյալի մասին <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a></p>
                 <table class="table table-hover">
   
   
@@ -607,7 +607,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Ցուցանիշի անվանումը  </th>
+        <th scope="row">Ցուցանիշի անվանումը </th>
         <td>
           
             <p>Ծովափնյա ճահճացման և պոլիէթիլենային լողացող աղբի խտության համաթիվը</p>
@@ -633,7 +633,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Ցուցանիշի համարը  </th>
+        <th scope="row">Ցուցանիշի համարը </th>
         <td>
           
             <p>14.1.1</p>
@@ -672,7 +672,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Թիրախի համարը  </th>
+        <th scope="row">Թիրախի համարը </th>
         <td>
           
             <p>14.1</p>
@@ -685,7 +685,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">Գլոբալ ցուցանիշի նկարագրությունը  </th>
+        <th scope="row">Գլոբալ ցուցանիշի նկարագրությունը </th>
         <td>
           
             
@@ -698,7 +698,7 @@ data-event-label="Change to Sources tab"
   
       
       <tr>
-        <th scope="row">ՄԱԿ-ի կողմից նշանակված աստիճան  </th>
+        <th scope="row">ՄԱԿ-ի կողմից նշանակված աստիճան </th>
         <td>
           
             <p>3</p>
@@ -813,7 +813,7 @@ data-event-label="Change to Sources tab"
 
   <!-- The organisation field -->
   <tr>
-    <th scope="row">Կազմակերպություն </th>
+    <th scope="row">Կազմակերպություն</th>
     <td>
       
       
@@ -823,7 +823,7 @@ data-event-label="Change to Sources tab"
 
   <!-- The link field -->
   <tr>
-    <th scope="row">Հղում տվյալների աղբյուրներին </th>
+    <th scope="row">Հղում տվյալների աղբյուրներին</th>
     <td>
       <a href="" target="_blank">
         
@@ -839,7 +839,7 @@ data-event-label="Change to Sources tab"
 
   <!-- The other information field -->
   <tr>
-    <th scope="row">Այլ տեղեկություններ </th>
+    <th scope="row">Այլ տեղեկություններ</th>
     <td></td>
   </tr>
 
@@ -850,7 +850,7 @@ data-event-label="Change to Sources tab"
           <div role="tabpanel" class="tab-pane" id="edit">
             <div class="edit-container">
               <a class="btn btn-primary" href="http://prose.io/#armstat/sdg-data-armenia/edit/develop/data/indicator_14-1-1.csv">Խմբագրել տվյալները</a>
-              <a class="btn btn-primary" href="http://prose.io/#armstat/sdg-data-armenia/edit/develop/meta/14-1-1.md">Խմբագրել մետատվյալները</a>
+              <a class="btn btn-primary" href="http://prose.io/#armstat/sdg-data-armenia/edit/develop/meta/14-1-1.md">Խմբագրել մեթատվյալները</a>
             </div>
           </div>
           
@@ -870,7 +870,7 @@ data-event-label="Change to Sources tab"
             
             
             <li><a href="/sdg-site-armenia/faq/">ՀՏՀ</a></li>
-            <li><a href="/sdg-site-armenia/about/cookies-and-privacy/">Քուկիներ </a></li>
+            <li><a href="/sdg-site-armenia/about/cookies-and-privacy/">Քուկիներ</a></li>
           </ul>
         </div>
       </div>
@@ -902,7 +902,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/sdg-site-armenia/assets/js/sdg.js?v=20210429000838'></script><script>
+<script src='/sdg-site-armenia/assets/js/sdg.js?v=20210429125932'></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
